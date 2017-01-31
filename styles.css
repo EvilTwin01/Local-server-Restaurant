@@ -83,11 +83,11 @@ nav  {
 	margin-top: 193px;
 	text-align: center;
 	font-size: smaller;
-	margin-left: 174px;
-	margin-right: 1132px;
+	margin-left: 173px;
+	margin-right: 1134px;
 	padding-top: 1px;
 	padding-bottom: 1px;
-	padding-right: 3px;
+	padding-right: 0px;
 	padding-left: 5px;
 	margin-bottom: 3px;
 	background-color: #932F13;
@@ -95,13 +95,13 @@ nav  {
 	font-style: normal;
 }
 .bottom2 {
-	margin-top: -138px;
+	margin-top: -158px;
 	text-align: center;
 	font-size: smaller;
 	margin-left: 459px;
 	margin-right: 847px;
-	padding-top: 7px;
-	padding-bottom: 23px;
+	padding-top: 10px;
+	padding-bottom: 41px;
 	padding-right: 7px;
 	padding-left: 5px;
 	margin-bottom: -10px;
@@ -124,4 +124,7 @@ nav  {
 	text-decoration: overline;
 	font-family: bree-serif;
 	font-style: normal;
+}.welcome {
+	margin-left: 781px;
+	margin-top: -119px;
 }
