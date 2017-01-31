@@ -128,3 +128,50 @@ nav  {
 	margin-left: 781px;
 	margin-top: -119px;
 }
+.a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.navHome {
+	-webkit-transition: all 0s ease 0s;
+	-o-transition: all 0s ease 0s;
+	transition: all 0s ease 0s;
+}
+.navHome:active {
+	color: #FF7E00;
+}
+.navHome:hover {
+	color: #FF7E00;
+}
+.navTest {
+	-webkit-transition: all;
+	-o-transition: all;
+	transition: all;
+}
+.navGallery {
+	-webkit-transition: all;
+	-o-transition: all;
+	transition: all;
+}
+.navContact {
+	-webkit-transition: all;
+	-o-transition: all;
+	transition: all;
+}
+.navLogin {
+	-webkit-transition: all;
+	-o-transition: all;
+	transition: all;
+}
+.navTest:hover {
+	color: #FF7E00;
+}
+.navGallery:hover {
+	color: #FF7E00;
+}
+.navContact:hover {
+	color: #FF7E00;
+}
+.navLogin:hover {
+	color: #FF7E00;
+}
