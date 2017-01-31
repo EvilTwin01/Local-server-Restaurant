@@ -15,12 +15,13 @@ nav  {
 }
 .asideleft {
 	margin-right: 11px;
-	margin-bottom: 18px;
+	margin-bottom: 15px;
 	margin-left: 5px;
 	min-width: 400px;
-	padding-top: 33px;
+	padding-top: 144px;
 	padding-right: 15px;
 	padding-left: 149px;
+	margin-top: -81px;
 	
 }
 .logo {
@@ -64,5 +65,63 @@ nav  {
 	font-size: smaller;
 }
 .asideright {
-	background-color: #922426;
+	background-color: #FFF8F8;
+	margin-right: 176px;
+	text-align: center;
+	float: right;
+	margin-left: 1084px;
+	margin-top: -198px;
+	padding-bottom: 2px;
+}
+.background {
+	background-image: url(img/background.jpg);
+	position: static;
+	visibility: visible;
+	background-repeat: no-repeat;
+}
+.bottom {
+	margin-top: 193px;
+	text-align: center;
+	font-size: smaller;
+	margin-left: 174px;
+	margin-right: 1132px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-right: 3px;
+	padding-left: 5px;
+	margin-bottom: 3px;
+	background-color: #932F13;
+	color: #FFFFFF;
+	font-style: normal;
+}
+.bottom2 {
+	margin-top: -138px;
+	text-align: center;
+	font-size: smaller;
+	margin-left: 459px;
+	margin-right: 847px;
+	padding-top: 7px;
+	padding-bottom: 23px;
+	padding-right: 7px;
+	padding-left: 5px;
+	margin-bottom: -10px;
+	background-color: #932F13;
+	color: #FFFFFF;
+	font-style: normal;
+}
+.bottomp {
+	font-family: bree-serif;
+	font-style: normal;
+	color: #1A1111;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: overline;
+}
+.bottom2p {
+	color: #050505;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: overline;
+	font-family: bree-serif;
+	font-style: normal;
 }
