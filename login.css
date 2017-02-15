@@ -1,0 +1,64 @@
+@charset "utf-8";
+.background {
+	background-size: cover;
+	-webkit-box-shadow: 0px 0px 0px;
+	box-shadow: 0px 0px 0px;
+	background-image: url(img/login_back.jpg);
+}
+.signin_style {
+	background-color: #FDFDFD;
+	text-align: center;
+	float: none;
+	-webkit-box-shadow: 0px 0px;
+	box-shadow: 0px 0px;
+	color: #030303;
+	font-weight: bolder;
+	margin-left: 1085px;
+	margin-right: 169px;
+	padding-top: 15px;
+	padding-bottom: 41px;
+	margin-top: 121px;
+	opacity: 1;
+}
+.h1 {
+	color: #F1F1F1;
+	font-size: 160%;
+	padding-bottom: 0px;
+	margin-left: 632px;
+	padding-right: 0px;
+	margin-right: 570px;
+	margin-top: 45px;
+}
+.pre {
+	text-align: justify;
+	font-size: 127%;
+	color: #FBF4F4;
+	margin-right: 145px;
+	margin-left: 474px;
+	margin-bottom: 75px;
+	margin-top: 43px;
+	padding-bottom: 26px;
+}
+.login_button {
+	background-color: #008703;
+	margin-bottom: 3px;
+	margin-top: 19px;
+	margin-right: 7px;
+	padding-right: 71px;
+	padding-left: 71px;
+	color: #FFFFFF;
+	padding-bottom: 7px;
+	padding-top: 7px;
+}
+.username {
+}
+.password {
+	margin-bottom: 0px;
+	padding-bottom: 2px;
+	padding-top: 0px;
+	margin-top: 15px;
+}
+.hi {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}
