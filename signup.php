@@ -41,7 +41,7 @@
 	<div class="top_background">
 		<nav>
 			<a class="home" href="index.html">Home |</a>
-			<a class="login" href="login.html">Have an account? Log in</a>
+			<a class="login" href="login.php">Have an account? Log in</a>
 		</nav>
 	</div>
 	<h1 class="h1">Join Coffee Corner today.</h1>
