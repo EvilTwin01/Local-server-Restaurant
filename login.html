@@ -15,19 +15,22 @@
    <div>
 		<form>
 			<p class="hi">Hi! Good to see you!</p>
-			<input type="text" required class="username" placeholder="Username">
+			<input type="text" class="username" placeholder="Username" required>
 		</form>
 	</div>
 	
 	<div>
 		<form>
-			<input type="password" required class="password" placeholder="Password">
+			<input type="password" class="password" placeholder="Password" required>
 		</form>
 	</div>
 	
 	<div>
-		<input type="submit" class="login_button" value="Log in">
+		<input action="login.php" type="submit" class="login_button" value="Log in">
 	</div>
+	 <div>
+		 <p>New customer? <a href="signup.php" class="signup">Sign up now !</a></p>
+	 </div>
  </div>	
 </body>
 </html>

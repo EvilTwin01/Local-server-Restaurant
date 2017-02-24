@@ -133,14 +133,18 @@ nav  {
 	text-decoration: none;
 }
 .navHome {
-	-webkit-transition: all 0s ease 0s;
-	-o-transition: all 0s ease 0s;
-	transition: all 0s ease 0s;
+	-webkit-transition: all 0s linear 0s;
+	-o-transition: all 0s linear 0s;
+	transition: all 0s linear 0s;
+	background-color: #FFFBFB;
+	color: #6F2D00;
+	padding-left: 5px;
+	margin-left: 342px;
+	padding-bottom: inherit;
+	padding-top: inherit;
+	padding-right: 5px;
 }
-.navHome:active {
-	color: #FF7E00;
-}
-.navHome:hover {
+.navHome:hover:not{
 	color: #FF7E00;
 }
 .navTest {
@@ -162,6 +166,7 @@ nav  {
 	-webkit-transition: all;
 	-o-transition: all;
 	transition: all;
+	margin-left: 361px;
 }
 .navTest:hover {
 	color: #FF7E00;
@@ -174,4 +179,7 @@ nav  {
 }
 .navLogin:hover {
 	color: #FF7E00;
+}
+.navHome:active {
+	background-color: #FFFFFF;
 }

@@ -1,0 +1,78 @@
+@charset "utf-8";
+.top_background {
+	background-color: #7E3012;
+	padding-top: 19px;
+	padding-bottom: 19px;
+	margin-top: -10px;
+	margin-right: -11px;
+	margin-left: -11px;
+}
+.home {
+	color: #FFFFFF;
+	text-decoration: none;
+	margin-left: 1306px;
+}
+.h1 {
+	margin-left: 630px;
+	font-size: 166%;
+	margin-bottom: 6px;
+	margin-top: 114px;
+	color: #FCFCFC;
+}
+
+.login  {
+	color: #FFFFFF;
+	text-decoration: none;
+	margin-right: 6px;
+}
+.input {
+	margin-left: 793px;
+}
+.input .username {
+	padding-right: 174px;
+	padding-left: 10px;
+	margin-left: -164px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: 22px;
+}
+.input .submit {
+	padding-bottom: 12px;
+	padding-top: 12px;
+	padding-right: 164px;
+	padding-left: 155px;
+	margin-left: -164px;
+	margin-top: 21px;
+	background-color: #7E3012;
+	color: #FCFCFC;
+}
+
+.input .email {
+	padding-right: 174px;
+	padding-left: 10px;
+	margin-left: -164px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: 22px;
+}
+.input .phone {
+	padding-right: 174px;
+	padding-left: 10px;
+	margin-left: -164px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: 22px;
+}
+.input .password {
+	padding-right: 174px;
+	padding-left: 10px;
+	margin-left: -164px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: 22px;
+}
+.body {
+	background-image: url(img/signup_back1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
