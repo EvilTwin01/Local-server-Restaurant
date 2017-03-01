@@ -1,0 +1,123 @@
+@charset "utf-8";
+.ul {
+	list-style-type: none;
+	background-color: #7E3012;
+	color: #FFFFFF;
+	font-size: medium;
+	font-style: normal;
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	margin-right: 1333px;
+	text-align: left;
+	padding-left: 10px;
+	margin-left: -17px;
+}
+.dashboard {
+	padding-top: 13px;
+	padding-bottom: 13px;
+	border-color: #FDFDFD;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-bottom-width: 0px;
+	margin-top: -20px;
+}
+.add {
+	padding-top: 13px;
+	padding-bottom: 13px;
+	border-color: #FDFDFD;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-bottom-width: 0px;
+}
+.view {
+	padding-top: 13px;
+	padding-bottom: 13px;
+	border-color: #FDFDFD;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-bottom-width: 0px;
+}
+.update {
+	padding-top: 13px;
+	padding-bottom: 13px;
+	border-color: #FDFDFD;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-bottom-width: 0px;
+}
+.delete {
+	padding-top: 13px;
+	padding-bottom: 13px;
+	border-color: #FDFDFD;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-right-style: none;
+}
+.navbar {
+
+}
+
+
+.border-bottom {
+	padding-bottom: 523px;
+}
+.h3 {
+	padding-top: 0px;
+	margin-top: -756px;
+	padding-bottom: 0px;
+	margin-right: 910px;
+	margin-left: 292px;
+
+}
+.h2 {
+	background-color: #7E3012;
+	color: #FFFFFF;
+	margin-top: -11px;
+	margin-left: -8px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 16px;
+	margin-right: -13px;
+}
+.button_logout {
+	position: absolute;
+	margin-top: -81px;
+	padding-left: 1472px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.credential {
+	position: absolute;
+	margin-top: -80px;
+	padding-left: 1297px;
+	color: #FFFFFF;
+}
+
+.add2 {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.dashtext {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.space {
+	margin-left: 235px;
+	background-color: #D46768;
+	position: absolute;
+	padding-right: 178px;
+	padding-left: 214px;
+	padding-bottom: 60px;
+	padding-top: 39px;
+	margin-top: -42px;
+}
+.current {
+	background-color: #87B48D;
+	position: absolute;
+	margin-top: -42px;
+	margin-left: 964px;
+	padding-top: 113px;
+	padding-right: 229px;
+	padding-bottom: 118px;
+	padding-left: 190px;
+}

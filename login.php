@@ -21,16 +21,15 @@
 
 	  if(mysqli_num_rows($result) == 1)
 	  {
-		  $_SESSION['message'] = "You are logged in";
-		  $_SESSION['username'] = $username;
-		  header("location: index.html");
+		  //$_SESSION['username'] = $username;
+		  //$_SESSION['user_id'] = $userid;
+		  header("location: user_dashboard.php");
 	  }
 	  else
 	  {
 		echo "Username/password are incorrect!";
 	  }
   }
-
 ?>
 
 
@@ -62,10 +61,11 @@
 	  		if(mysqli_num_rows($result) == 1)
 	  		{
 				echo "";
+				$_SESSION['username'] = $username;
 	  		}
 	  		else
 	  		{
-				echo "Username/password are incorrect!";
+				echo "Incorrect username/password!";
 	  		}
   		}
 		?>
