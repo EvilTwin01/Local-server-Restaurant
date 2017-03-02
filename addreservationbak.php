@@ -25,7 +25,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
 			{
 				die("database query fail!" . mysqli_error($connection));
 			}
-			header("location: user_view.php");
+			header("location: user_addreservation.php");
 		}
 	}
 ?>
@@ -70,10 +70,10 @@ if(session_id()=='' || isset($_SESSION['username'])){
 	<h2>Add Reservation</h2><br><br>
 	<form method="post" action="user_addreservation.php">
 		Number of people: 
-		<input type="number" name="people" min="1" max="20" required><br></br>
-		<label for="from">Select date:</label> <input type="text" id="from" name="from" required/><br><br>
+		<input type="number" name="people" min="1" max="20"><br></br>
+		<label for="from">Select date:</label> <input type="text" id="from" name="from"/><br><br>
 		Select time:
-		<input type="time" name="user_time" required><br></br>
+		<input type="time" name="user_time"><br></br>
 		<input type="submit" name="submit"><br><br>
 	</form>	
 	<!--We are holding this table for you for = <span id="timer"></span>-->
