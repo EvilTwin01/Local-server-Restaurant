@@ -10,6 +10,7 @@
 	text-align: left;
 	padding-left: 10px;
 	margin-left: -17px;
+	margin-top: -61px;
 }
 .dashboard {
 	padding-top: 13px;
@@ -60,14 +61,6 @@
 .border-bottom {
 	padding-bottom: 523px;
 }
-.h3 {
-	padding-top: 0px;
-	margin-top: -756px;
-	padding-bottom: 0px;
-	margin-right: 910px;
-	margin-left: 292px;
-
-}
 
 
 .h2 {
@@ -80,6 +73,11 @@
 	padding-left: 16px;
 	margin-right: -13px;
 }
+.details {
+	margin-left: 296px;
+	margin-top: 7px;
+}
+
 .button_logout {
 	text-decoration: none;
 	position: absolute;
@@ -94,4 +92,9 @@
 	color: #FFFFFF;
 	margin-top: -834px;
 	padding-left: 1279px;
+}
+.details_box {
+	margin-top: -728px;
+	padding-left: 10px;
+	margin-left: 285px;
 }

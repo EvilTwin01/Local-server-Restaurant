@@ -25,8 +25,6 @@ if(session_id()=='' || isset($_SESSION['username'])){
 			{
 				die("database query fail!" . mysqli_error($connection));
 			}
-			//$_SESSION['username'] = $username;
-			//$_SESSION['user_id'] = $userid;
 			header("location: user_view.php");
 		}
 	}

@@ -21,8 +21,6 @@
 
 	  if(mysqli_num_rows($result) == 1)
 	  {
-		  //$_SESSION['username'] = $username;
-		  //$_SESSION['user_id'] = $userid;
 		  header("location: user_dashboard.php");
 	  }
 	  else
