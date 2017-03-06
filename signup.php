@@ -51,7 +51,7 @@
 	<h1 class="h1">Join Coffee Corner today.</h1>
 	<form class="input" method="post" action="signup.php">
 		<input type="text" class="username" placeholder="Username" name="user" required> <br><br>
-		<input type="text" class="email" placeholder="Email" name="email" required> <br><br>
+		<input type="email" class="email" placeholder="Email" name="email" required> <br><br>
 		<input type="text" class="phone" placeholder="Phone Number" name="phone" required> <br><br>
 		<input type="password" class="password" placeholder="Password" name="password" required> <br><br>
 		<input class="submit" type="submit" value="Sign up" name="submit">

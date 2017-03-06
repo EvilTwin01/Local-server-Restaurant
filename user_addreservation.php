@@ -68,7 +68,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
 
 <section class="space">
 	<h2>Add Reservation</h2><br><br>
-	<form method="post" action="user_addreservation.php">
+	<form  method="post" action="user_addreservation.php">
 		Number of people: 
 		<input type="number" name="people" min="1" max="20" required><br></br>
 		<label for="from">Select date:</label> <input type="text" id="from" name="from" required/><br><br>

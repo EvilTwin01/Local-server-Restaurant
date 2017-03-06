@@ -23,7 +23,7 @@
 <head>
 <meta charset="utf-8">
 <title>User | Dashboard</title>
-<link href="user_dash.css" rel="stylesheet" type="text/css">
+<link href="edit1.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -44,52 +44,25 @@
 </div>
 	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
-	<div class="box">
-    <?php	
-	// table reservation details
-	echo "<table width=\"1200\" border=\"1\" cellspacing=\"0px\" cellpadding=\"50px\">";
-    echo     "<tr>";
-    echo     "<th>Username</th>";
-	echo     "<th>Reservation ID</th>";
-    echo     "<th>Total Person</th>";
-    echo     "<th>Date</th>";
-	echo     "<th>Time</th>";
-	echo     "<th>Edit</th>"; 
-    echo "</tr>";
-    echo "<tr>";
-    if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_array($result)) {
-    ?>
-        <tr>
-            <td><?php echo $row['username']; ?></td>
-            <td><?php echo $row['reserve_id']; ?></td>  
-            <td><?php echo $row['no_of_people']; ?></td> 
-            <td><?php echo date('d/m/Y', strtotime($row['date'])); ?></td> 
-            <td><?php echo date('h:i a', strtotime($row['time'])); ?></td>
-			<td>
-     			<a method="post" action="user_update.php">
-      				<a href="edit1.php"><input type="button" value="Edit"></a>
-				</a>
-       		</td>
-        </tr>
-        <?php
-    }
-}
-     echo         "</tr>";
-     echo  "</table>";
-	// end table reservation details
-  ?>
+	<!--drop down -->
+	<div class="dropdown">
+		<h2>Reservation Update</h2>
+		<p>Select Reservation ID to edit:</p>
+		<form id="form" action="editform.php" method="post">
+		<?php
+		echo "<select name=\"Reservation ID\" form=\"form\">";
+		while ($row = mysqli_fetch_array($result)) 
+  		{
+			$gg = $row['reserve_id'];
+   			 echo "<option value='" . $gg . "' name=\"reserve_id\">" . $gg . "</option>";
+		}
+		echo "</select>";
+		$_SESSION['reserve'] = $gg;
+		?>
+		<input type="submit" name="form" value="Submit">
+		</form>
 	</div>
-	
-	<?php 
-		if(isset($_POST['edit']))
-		{ 
-			header("location: edit1.php");
-	?>
-			
-	<?php 
-		} 
-	?>
+	<!-- end drop down -->
 </body>
 <?php 
  } 

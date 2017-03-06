@@ -63,9 +63,9 @@ if(session_id()=='' || isset($_SESSION['username'])){
         <tr>
             <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['reserve_id']; ?></td>  
-            <td><?php echo $row['no_of_people']; ?></td> 
-            <td><?php echo $row['date']; ?></td> 
-            <td><?php echo $row['time']; ?></td>
+            <td contenteditable="false"><?php echo $row['no_of_people']; ?></td> 
+            <td><?php echo date('d/m/Y', strtotime($row['date'])); ?></td> 
+            <td><?php echo date('h:i a', strtotime($row['time'])); ?></td>
         </tr>
         <?php
     }
