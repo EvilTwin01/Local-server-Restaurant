@@ -7,7 +7,24 @@
     $dbname = "coffeecorner";
 	$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-	$user = $_SESSION['username'];	
+	$user = $_SESSION['username'];
+
+	if(isset($_POST['save']))
+	{
+		$no_of_people = mysqli_real_escape_string($connection, $_POST['people']);
+		$date = mysqli_real_escape_string($connection, $_POST['from']);
+		$time = mysqli_real_escape_string($connection, $_POST['user_time']);
+		
+		$sql1 = "UPDATE add_reservation SET no_of_people = '$no_of_people', date = '$date', time = '$time' WHERE reserve_id = '$identifier'";
+		$result1 = mysqli_query($connection, $sql1);
+		
+		if(!$result1)
+		{
+			die("database query fail!" . mysqli_error($connection));
+		}
+	
+		header("location: user_view.php");
+	}
 
 ?>
 
@@ -17,6 +34,11 @@
 <meta charset="utf-8">
 <title>User | Dashboard</title>
 <link href="editform.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.datepicker.min.css" rel="stylesheet" type="text/css">
+<script src="jQueryAssets/jquery-1.11.1.min.js"></script>
+<script src="jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
 </head>
 
 <body>
@@ -27,18 +49,19 @@
 	  <li class="dashboard"><a>Dashboard</a></li>
 	  <li class="add"><a>Make a reservation</a></li>
 	  <li class="view"><a>View Reservation</a></li>
-	  <li class="update"><a>Update Reservation</a></li>
+	  <li class="update"><a href="user_update.php">Update Reservation</a></li>
 	  <li class="delete"><a>Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
 <div>
-	<h3 class="h3">Welcome <?php echo $_SESSION['username']. "."; ?></h3>
+	<h3 class="h3">Reservation Details</h3>
 </div>
 	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
 	<!-- edit -->
-	<?php
+<?php
+	//$identifier =  '';
 	if(isset($_POST['form']))
 {
 	//echo $_POST['Reservation_ID'];
@@ -60,7 +83,7 @@
     if (mysqli_num_rows($result) > 0) 
 	{
     	while ($row = mysqli_fetch_array($result)) {
-        ?>
+?>
         <tr>
             <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['reserve_id']; ?></td>  
@@ -68,28 +91,37 @@
             <td><?php echo date('d/m/Y', strtotime($row['date'])); ?></td> 
             <td><?php echo date('h:i a', strtotime($row['time'])); ?></td>
         </tr>
-        <?php
+<?php
     	}
   	}
      echo         "</tr>";
      echo  "</table>";
 	echo "</div>";
 	//end table
+	echo "<div class=\"addform\">";
+	echo "<h3>Please fill in new details:</h3>";
+	echo "<form method=\"post\" action=\"test.php\">";
+	echo	"Number of people: ";
+	echo	"<input type=\"number\" name=\"people\" min=\"1\" max=\"20\"><br></br>";
+	echo	"<label for=\"from\">Select date:</label> <input type=\"text\" id=\"from\" name=\"from\"/><br><br>";
+	echo	"Select time:";
+	echo	"<input type=\"time\" name=\"user_time\"><br></br>";
+	echo	"<input type=\"submit\" name=\"save\" value=\"save\"><br><br>";
+	echo	"</form>";	
+	echo "</div>";
 }
-	?>
-	<div class="addform">
-	<!-- form -->
-		<form method="post" action="user_addreservation.php">
+?>
+	<!--<div class="addform">
+		<h3>Please fill in new details:</h3>
+		<form method="post" action="editform.php">
 		Number of people: 
 		<input type="number" name="people" min="1" max="20"><br></br>
 		<label for="from">Select date:</label> <input type="text" id="from" name="from"/><br><br>
 		Select time:
 		<input type="time" name="user_time"><br></br>
-		<input type="submit" name="submit"><br><br>
+		<input type="submit" name="save" value="save"><br><br>
 		</form>	
-	<!-- end from-->
-	</div>
-</body>
+	</div>-->
 
 <script type="text/javascript">
  	var dateToday = new Date();
@@ -106,41 +138,7 @@
     }
 });
 </script>
-
-<script>
-	function updateClock ( )
- 	{
- 	var currentTime = new Date ( );
-  	var currentHours = currentTime.getHours ( );
-  	var currentMinutes = currentTime.getMinutes ( );
-  	var currentSeconds = currentTime.getSeconds ( );
-		
-  	// Pad the minutes and seconds with leading zeros, if required
-  	currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
-  	currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
-
-  	// Choose either "AM" or "PM" as appropriate
-  	var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
-
-  	// Convert the hours component to 12-hour format if needed
-  	currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
-
-  	// Convert an hours component of "0" to "12"
-  	currentHours = ( currentHours == 0 ) ? 12 : currentHours;
-
-  	// Compose the string for display
-  	var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
-  	
-  	
-   	$("#clock").html(currentTimeString);
-   	  	
- }
-
-$(document).ready(function()
-{
-   setInterval('updateClock()', 1000);
-});
-</script>
+</body>
 
 <?php 
  //} 
