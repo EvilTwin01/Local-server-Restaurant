@@ -1,6 +1,6 @@
 <?php 
-	//session_start();
-	//if(session_id()=='' || isset($_SESSION['user'])){
+	session_start();
+	if(session_id()=='' || isset($_SESSION['user'])){
 		$dbhost = "localhost";
 		$dbuser = "root";
 		$dbpass = "1234";
@@ -59,8 +59,8 @@
         <tr>
             <td><?php echo $row['noti_text']; ?></td>  
 			<td>
-     			<a method="post" action="">
-      				<a href="edit1.php"><input type="button" value="SEND"></a>
+     			<a method="post">
+      				<a href="admin.php"><input type="button" value="SEND" name="send"></a>
 				</a>
        		</td>
         </tr>
@@ -75,10 +75,10 @@
 </body>
 
 <?php 
- //} 
- //else
- //{ 
-	//header("location: login.php");
- //}
+ } 
+ else
+ { 
+	header("location: admin_login.php");
+ }
 ?>
 </html>

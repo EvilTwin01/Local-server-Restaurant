@@ -31,9 +31,9 @@
   </ul>
 </nav>
 <div>
-	<h3 class="h3">Welcome <?php $_SESSION['username']. "."; ?></h3>
+	<h3 class="h3">Welcome <?php $_SESSION['user']. "."; ?></h3>
 </div>
-	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
+	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
 </body>
 

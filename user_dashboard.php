@@ -37,9 +37,14 @@
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
 <div>
 	<?php 
-	  $sql = "SELECT * FROM notification WHERE ";
-	  $result = mysqli_query($connection, $sql);
+	  	$sql = "SELECT * FROM notification WHERE noti_id = '1'";
+	  	$result = mysqli_query($connection, $sql);
+		
+		while($row = mysqli_fetch_array($result))
+		{	
 	?>
+	<marquee class="marque" bgcolor="#5CD8CE"><?php echo $row['noti_text']; ?></marquee>
+	<?php } ?>
 </div>
 </body>
 
@@ -51,8 +56,3 @@
  }
 ?>
 </html>
-
-
-<?php
-	mysqli_close($connection);
-?>
