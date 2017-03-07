@@ -32,10 +32,15 @@
 </nav>
 <div>
 	<h3 class="h3">Welcome <?php echo $_SESSION['username']. "."; ?></h3>
-	<?php if(isset($userid)){ echo $userid;}else{ echo "no id exist!";} ?>
 </div>
 	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
+<div>
+	<?php 
+	  $sql = "SELECT * FROM notification WHERE ";
+	  $result = mysqli_query($connection, $sql);
+	?>
+</div>
 </body>
 
 <?php 

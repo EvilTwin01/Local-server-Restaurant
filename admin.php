@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	if(session_id()=='' || isset($_SESSION['username'])){
+	if(session_id()=='' || isset($_SESSION['user'])){
 ?>
 
 <!doctype html>
@@ -17,7 +17,13 @@
 <nav class="navbar">
   <ul class="ul">
 	  <li class="dashboard"><a href="admin.php">Dashboard</a></li>
-	  <li class="add"><a>Add notification</a></li>
+	   <div class="dropdown">
+  <a class="dropbtn">Notification</a>
+  <div class="dropdown-content">
+    <a href="notification.php">Add Notification</a>
+    <a href="notification1.php">View Notification</a>
+    <a href="#">Link 3</a>
+  </div>
 	  <li class="view"><a>View Reservation</a></li>
 	  <li class="update"><a>Reservation Status</a></li>
 	  <li class="delete"><a>Delete Reservation</a></li>
@@ -25,17 +31,17 @@
   </ul>
 </nav>
 <div>
-	<h3 class="h3">Welcome <?php //echo $_SESSION['username']. "."; ?></h3>
+	<h3 class="h3">Welcome <?php $_SESSION['username']. "."; ?></h3>
 </div>
-	<p class="credential">Logged in as : <?php //echo $_SESSION['username']; ?></p>
-	<a class="button_logout" href="logout.php" name="logout">Log out</a>
+	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
+	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
 </body>
 
 <?php 
  } 
  else
  { 
-	header("location: login.php");
+	header("location: admin_login.php");
  }
 ?>
 </html>

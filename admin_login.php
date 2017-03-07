@@ -11,7 +11,7 @@
 	  $username = mysqli_real_escape_string($connection, $_POST['username']);
 	  $password = mysqli_real_escape_string($connection, $_POST['password']);
 	  
-	  $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+	  $sql = "SELECT * FROM admin WHERE user='$username' AND pass='$password'";
 	  $result = mysqli_query($connection, $sql);
 	  
 	  if(!$result)
@@ -49,13 +49,13 @@
 	  		$username = mysqli_real_escape_string($connection, $_POST['username']);
 			$password = mysqli_real_escape_string($connection, $_POST['password']);
 	  
-			$sql = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+			$sql = "SELECT * FROM admin WHERE user='$username' AND pass='$password'";
 	  		$result = mysqli_query($connection, $sql);
 	  
 	  		if(mysqli_num_rows($result) == 1)
 	  		{
 				echo "";
-				$_SESSION['username'] = $username;
+				$_SESSION['user'] = $username;
 	  		}
 	  		else
 	  		{
