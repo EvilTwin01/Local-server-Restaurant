@@ -24,7 +24,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
 	<div>
 		<h2>Reservation Update</h2>
 		<p>Select Reservation ID to edit:</p>
-		<form id="form" action="edit.php" method="post">
+		<form id="form" action="edit.php" method="get">
 		<?php
 		echo "<select name=\"Reservation ID\" form=\"form\">";
 		while ($row = mysqli_fetch_array($result)) 
@@ -39,11 +39,11 @@ if(session_id()=='' || isset($_SESSION['username'])){
 		</form>
 	</div>
 	<?php
-  if(isset($_POST['form']))
+  if(isset($_GET['form']))
   {
 	//echo $_POST['Reservation_ID'];
 	//print_r($_POST);
-	$identifier = $_POST['Reservation_ID']; 
+	$identifier = $_GET['Reservation_ID']; 
 	$sql1 = "SELECT * FROM add_reservation WHERE reserve_id LIKE '$identifier'";
 	$result1 = mysqli_query($connection, $sql1);
 	

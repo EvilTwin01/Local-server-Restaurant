@@ -48,9 +48,9 @@
 	<div class="dropdown">
 		<h2>Reservation Update</h2>
 		<p>Select Reservation ID to edit:</p>
-		<form id="form" action="editform.php" method="post">
+		<form id="form" action="editformbak.php" method="get">
 		<?php
-		echo "<select name=\"Reservation ID\" form=\"form\">";
+		echo "<select name=\"Reservation_ID\" form=\"form\">";
 		while ($row = mysqli_fetch_array($result)) 
   		{
 			$gg = $row['reserve_id'];

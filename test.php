@@ -10,11 +10,11 @@ if(session_id()=='' || isset($_SESSION['username'])){
 
 	$user = $_SESSION['username'];
 
-	if(isset($_POST['save']))
+	if(isset($_GET['save']))
 	{
-		$no_of_people = mysqli_real_escape_string($connection, $_POST['people']);
-		$date = mysqli_real_escape_string($connection, $_POST['from']);
-		$time = mysqli_real_escape_string($connection, $_POST['user_time']);
+		$no_of_people = mysqli_real_escape_string($connection, $_GET['people']);
+		$date = mysqli_real_escape_string($connection, $_GET['from']);
+		$time = mysqli_real_escape_string($connection, $_GET['user_time']);
 		
 		$sql1 = "UPDATE add_reservation SET no_of_people = '$no_of_people', date = '$date', time = '$time' WHERE reserve_id = '$identifier'";
 		$result1 = mysqli_query($connection, $sql1);

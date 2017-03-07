@@ -10,13 +10,12 @@
 	$user = $_SESSION['username'];
 	if(isset($_GET['save']))
 	{
-		print_r($_GET);
-		//$id = mysqli_real_escape_string($connection, $_GET['aa']);
+		$id = mysqli_real_escape_string($connection, $_GET['aa']);
 		$no_of_people = mysqli_real_escape_string($connection, $_GET['people']);
 		$date = mysqli_real_escape_string($connection, $_GET['from']);
 		$time = mysqli_real_escape_string($connection, $_GET['user_time']);
 		
-		$sql1 = "UPDATE add_reservation SET no_of_people = '$no_of_people', date = '$date', time = '$time' WHERE reserve_id = '$id'";
+		$sql1 = "UPDATE add_reservation SET no_of_people = '$no_of_people',date = STR_TO_DATE('$date','%m/%d/%Y'), time = '$time' WHERE reserve_id = '$id'";
 		$result1 = mysqli_query($connection, $sql1);
 		
 		if(!$result1)
@@ -51,7 +50,7 @@
 	  <li class="add"><a>Make a reservation</a></li>
 	  <li class="view"><a>View Reservation</a></li>
 	  <li class="update"><a href="user_update.php">Update Reservation</a></li>
-	  <li class="delete"><a href="user_delete.php">Delete Reservation</a></li>
+	  <li class="delete"><a>Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
@@ -66,12 +65,11 @@
 	if(isset($_GET['form']))
 {
 	//echo $_POST['Reservation_ID'];
-	print_r($_GET);
-	$identifier = $_GET['Reservation_ID'];
-	//$id = $_SESSION['$identifier'];
+	//print_r($_POST);
+	$identifier = $_GET['Reservation_ID']; 
 	$sql = "SELECT * FROM add_reservation WHERE reserve_id LIKE '$identifier'";
 	$result = mysqli_query($connection, $sql);
-	// table reservation based reservation id
+	// table reservation
 	echo "<div class=\"table\">";
 	echo "<table width=\"1200\" border=\"1\" cellspacing=\"0px\" cellpadding=\"50px\">";
     echo     "<tr>";
@@ -84,8 +82,7 @@
     echo "<tr>";
     if (mysqli_num_rows($result) > 0) 
 	{
-    	while ($row = mysqli_fetch_array($result)) 
-		{
+    	while ($row = mysqli_fetch_array($result)) {
 ?>
         <tr>
             <td><?php echo $row['username']; ?></td>
@@ -103,14 +100,14 @@
 	//end table
 	echo "<div class=\"addform\">";
 	echo "<h3>Please fill in new details:</h3>";
-	echo "<form method=\"get\" action=\"editform.php\">";
+	echo "<form method=\"get\" action=\"editformbak.php\">";
 	echo	"Number of people: ";
 	echo	"<input type=\"number\" name=\"people\" min=\"1\" max=\"20\"><br></br>";
 	echo	"<label for=\"from\">Select date:</label> <input type=\"text\" id=\"from\" name=\"from\"/><br><br>";
 	echo	"Select time:";
 	echo	"<input type=\"time\" name=\"user_time\"><br></br>";
-	//echo    "<input name=\"aa\" value=\"$identifier\">";
-	echo	"<input type=\"button\" name=\"save\" value=\"save\"><br><br>";
+	echo    "<input type=\"hidden\" name=\"aa\" value=\"$identifier\">";
+	echo	"<input type=\"submit\" name=\"save\" value=\"save\"><br><br>";
 	echo	"</form>";	
 	echo "</div>";
 }
@@ -142,7 +139,6 @@
     }
 });
 </script>
-
 </body>
 
 <?php 
