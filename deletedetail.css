@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import url("delete1.css");
 .ul {
 	list-style-type: none;
 	background-color: #7E3012;
@@ -92,13 +91,14 @@
 	margin-top: -117px;
 	color: #FFFFFF;
 }
+.table {
+	margin-left: 309px;
+}
+
 .box {
 	margin-left: 280px;
 }
-.dropdown {
-	margin-left: 289px;
-	margin-top: 30px;
-}
-.delete1 {
-	margin-left: 585px;
+.addform {
+	margin-left: 301px;
+	margin-top: 57px;
 }

@@ -16,6 +16,11 @@ if(session_id()=='' || isset($_SESSION['username'])){
   {
 	 die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
   }
+	if(isset($_POST['delete']))
+	{
+		header("location: user_view.php");
+		echo "hi!";
+	}
   //header("location: user_dashboard.php");
 ?>
 
@@ -32,18 +37,18 @@ if(session_id()=='' || isset($_SESSION['username'])){
 
 <nav class="navbar">
   <ul class="ul">
-	  <li class="dashboard"><a>Dashboard</a></li>
-	  <li class="add"><a>Make a reservation</a></li>
-	  <li class="view"><a>View Reservation</a></li>
-	  <li class="update"><a>Update Reservation</a></li>
-	  <li class="delete"><a>Delete Reservation</a></li>
+	  <li class="dashboard"><a href="user_dashboard.php">Dashboard</a></li>
+	  <li class="add"><a href="user_addreservation.php">Make a reservation</a></li>
+	  <li class="view"><a href="user_view.php">View Reservation</a></li>
+	  <li class="update"><a href="user_update.php">Update Reservation</a></li>
+	  <li class="delete"><a href="user_delete.php">Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
 <div>
 	<h3 class="h3">Cancel Your Reservation</h3>
 </div>
-	<p class="credential">Logged in as : <?php //echo $_SESSION['username']; ?></p>
+	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
 	<div class="delete1">
     <?php	
@@ -68,9 +73,10 @@ if(session_id()=='' || isset($_SESSION['username'])){
             <td><?php echo date('d/m/Y', strtotime($row['date'])); ?></td> 
             <td><?php echo date('h:i a', strtotime($row['time'])); ?></td>
 			<td>
-     			<form method="post" action="user_delete.php">	
-				<input type="checkbox" name="arrayValue[]"><br>
-				</form>
+			<a method="post" action="delete1.php">
+				<!--<input type="hidden" value="<?php //$row['reserve_id']; ?>" name="hidden">-->
+				<a href="delete1.php"><input type="button" value="delete" name="delete"></a><br>
+			</a>
        		</td>
         </tr>
         <?php

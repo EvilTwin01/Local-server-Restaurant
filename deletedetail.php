@@ -11,16 +11,13 @@
 	if(isset($_GET['save']))
 	{
 		$id = mysqli_real_escape_string($connection, $_GET['aa']);
-		$no_of_people = mysqli_real_escape_string($connection, $_GET['people']);
-		$date = mysqli_real_escape_string($connection, $_GET['from']);
-		$time = mysqli_real_escape_string($connection, $_GET['user_time']);
 		
-		$sql1 = "UPDATE add_reservation SET no_of_people = '$no_of_people',date = STR_TO_DATE('$date','%m/%d/%Y'), time = '$time' WHERE reserve_id = '$id'";
+		$sql1 = "DELETE FROM `add_reservation` WHERE `reserve_id` = '$id'";
 		$result1 = mysqli_query($connection, $sql1);
 		
 		if(!$result1)
 		{
-			die("database query fail!" . mysqli_error($connection));
+			die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
 		}
 	
 		header("location: user_view.php");
@@ -33,10 +30,11 @@
 <head>
 <meta charset="utf-8">
 <title>User | Dashboard</title>
-<link href="editform.css" rel="stylesheet" type="text/css">
+<link href="deletedetail.php" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.datepicker.min.css" rel="stylesheet" type="text/css">
+<link href="deletedetail.css" rel="stylesheet" type="text/css">
 <script src="jQueryAssets/jquery-1.11.1.min.js"></script>
 <script src="jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
 </head>
@@ -50,7 +48,7 @@
 	  <li class="add"><a>Make a reservation</a></li>
 	  <li class="view"><a>View Reservation</a></li>
 	  <li class="update"><a href="user_update.php">Update Reservation</a></li>
-	  <li class="delete"><a>Delete Reservation</a></li>
+	  <li class="delete"><a href="user_delete.php">Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
@@ -99,48 +97,14 @@
 	echo "</div>";
 	//end table
 	echo "<div class=\"addform\">";
-	echo "<h3>Please fill in new details:</h3>";
-	echo "<form method=\"get\" action=\"editformbak.php\">";
-	echo    "Reservation ID: ";
-	echo    "<input type=\"text\" value=\"$identifier\" disabled><br><br>";
-	echo	"Number of people: ";
-	echo	"<input type=\"number\" name=\"people\" min=\"1\" max=\"20\"><br></br>";
-	echo	"<label for=\"from\">Select date:</label> <input type=\"text\" id=\"from\" name=\"from\"/><br><br>";
-	echo	"Select time:";
-	echo	"<input type=\"time\" name=\"user_time\"><br></br>";
+	echo "<form method=\"get\" action=\"deletedetail.php\">";
 	echo    "<input type=\"hidden\" name=\"aa\" value=\"$identifier\">";
-	echo	"<input type=\"submit\" name=\"save\" value=\"save\"><br><br>";
+	echo	"<input type=\"submit\" name=\"save\" value=\"Delete\"><br><br>";
 	echo	"</form>";	
 	echo "</div>";
 }
 ?>
-	<!--<div class="addform">
-		<h3>Please fill in new details:</h3>
-		<form method="post" action="editform.php">
-		Number of people: 
-		<input type="number" name="people" min="1" max="20"><br></br>
-		<label for="from">Select date:</label> <input type="text" id="from" name="from"/><br><br>
-		Select time:
-		<input type="time" name="user_time"><br></br>
-		<input type="submit" name="save" value="save"><br><br>
-		</form>	
-	</div>-->
 
-<script type="text/javascript">
- 	var dateToday = new Date();
-	var dates = $("#from").datepicker({
-    defaultDate: "+1w",
-    changeMonth: true,
-    numberOfMonths: 1,
-    minDate: dateToday,
-    onSelect: function(selectedDate) {
-        var option = this.id == "from" ? "minDate" : "maxDate",
-            instance = $(this).data("datepicker"),
-            date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
-        dates.not(this).datepicker("option", option, date);
-    }
-});
-</script>
 </body>
 
 <?php 
