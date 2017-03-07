@@ -1,8 +1,8 @@
 @charset "utf-8";
 .ul {
 	list-style-type: none;
-	background-color: #7E3012;
-	color: #FFFFFF;
+	background-color: #FFFFFF;
+	color: #444444;
 	font-size: medium;
 	font-style: normal;
 	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
@@ -10,6 +10,7 @@
 	text-align: left;
 	padding-left: 10px;
 	margin-left: -17px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .dashboard {
 	padding-top: 13px;
@@ -66,7 +67,7 @@
 
 
 .h2 {
-	background-color: #7E3012;
+	background-color: #4CD0E1;
 	color: #FFFFFF;
 	margin-top: -11px;
 	margin-left: -8px;
@@ -74,6 +75,8 @@
 	padding-bottom: 15px;
 	padding-left: 16px;
 	margin-right: -13px;
+	-webkit-box-shadow: 0 2px 96px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 2px 96px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .button_logout {
 	text-decoration: none;
