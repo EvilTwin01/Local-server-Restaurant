@@ -1,28 +1,26 @@
 <?php 
 	session_start();
-	if(session_id()=='' || isset($_SESSION['username'])){
-	$dbhost = "localhost";
-	$dbuser = "root";
-	$dbpass = "1234";
-    $dbname = "coffeecorner";
-	$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+	if(session_id()=='' || isset($_SESSION['user'])){
+		$dbhost = "localhost";
+		$dbuser = "root";
+		$dbpass = "1234";
+	    $dbname = "coffeecorner";
+		$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-	$user = $_SESSION['username'];
 	if(isset($_GET['save']))
 	{
 		$id = mysqli_real_escape_string($connection, $_GET['aa']);
 		
-		$sql1 = "DELETE FROM `add_reservation` WHERE `reserve_id` = '$id'";
+		$sql1 = "UPDATE add_reservation SET status = 'Approved' WHERE reserve_id = '$id'";
 		$result1 = mysqli_query($connection, $sql1);
 		
 		if(!$result1)
 		{
-			die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
+			die("database query fail!" . mysqli_error($connection));
 		}
 	
-		header("location: user_view.php");
+		header("location: admin_view.php");
 	}
-
 ?>
 
 <!doctype html>
@@ -30,13 +28,7 @@
 <head>
 <meta charset="utf-8">
 <title>User | Dashboard</title>
-<link href="deletedetail.php" rel="stylesheet" type="text/css">
-<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
-<link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
-<link href="jQueryAssets/jquery.ui.datepicker.min.css" rel="stylesheet" type="text/css">
-<link href="deletedetail.css" rel="stylesheet" type="text/css">
-<script src="jQueryAssets/jquery-1.11.1.min.js"></script>
-<script src="jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
+<link href="status2.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -44,21 +36,21 @@
 
 <nav class="navbar">
   <ul class="ul">
-	  <li class="dashboard"><a>Dashboard</a></li>
-	  <li class="add"><a>Make a reservation</a></li>
-	  <li class="view"><a>View Reservation</a></li>
-	  <li class="update"><a href="user_update.php">Update Reservation</a></li>
-	  <li class="delete"><a href="user_delete.php">Delete Reservation</a></li>
+	  <li class="dashboard"><a href="admin.php">Dashboard</a></li>
+	  <li class="add"><a href="user_addreservation.php">Make a reservation</a></li>
+	  <li class="view"><a href="user_view.php">View Reservation</a></li>
+	  <li class="update"><a href="reservation_status.php">Update Reservation</a></li>
+	  <li class="delete"><a>Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
 <div>
-	<h3 class="h3">Reservation Details</h3>
+	<h3 class="h3">Reservation Status</h3>
 </div>
 	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
-	<!-- edit -->
-<?php
+	
+	<?php
 	//$identifier =  '';
 	if(isset($_GET['form']))
 {
@@ -71,7 +63,6 @@
 	echo "<div class=\"table\">";
 	echo "<table width=\"1200\" border=\"1\" cellspacing=\"0px\" cellpadding=\"50px\">";
     echo     "<tr>";
-	echo     "<th>Username</th>";
 	echo     "<th>Reservation ID</th>";
     echo     "<th>Total Person</th>";
     echo     "<th>Date</th>";
@@ -84,7 +75,6 @@
     	while ($row = mysqli_fetch_array($result)) {
 ?>
         <tr>
-            <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['reserve_id']; ?></td>  
             <td><?php echo $row['no_of_people']; ?></td> 
             <td><?php echo date('d/m/Y', strtotime($row['date'])); ?></td> 
@@ -99,21 +89,22 @@
 	echo "</div>";
 	//end table
 	echo "<div class=\"addform\">";
-	echo "<form method=\"get\" action=\"deletedetail.php\">";
+	echo "<h3>Are you confirm?:</h3>";
+	echo "<form method=\"get\" action=\"status2.php\">";
+	echo    "Reservation ID: ";
+	echo    "<input type=\"text\" value=\"$identifier\" disabled><br><br>";
 	echo    "<input type=\"hidden\" name=\"aa\" value=\"$identifier\">";
-	echo	"<input type=\"submit\" name=\"save\" value=\"Delete\"><br><br>";
+	echo	"<input type=\"submit\" name=\"save\" value=\"Approved\"><br><br>";
 	echo	"</form>";	
 	echo "</div>";
 }
 ?>
-
 </body>
-
 <?php 
  } 
  else
  { 
-	header("location: login.php");
+	header("location: admin_login.php");
  }
 ?>
 </html>

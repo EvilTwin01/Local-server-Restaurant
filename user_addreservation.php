@@ -1,8 +1,6 @@
 <?php 
 session_start();
 if(session_id()=='' || isset($_SESSION['username'])){
-
-  //session_start();
   $dbhost = "localhost";
   $dbuser = "root";
   $dbpass = "1234";
@@ -15,10 +13,11 @@ if(session_id()=='' || isset($_SESSION['username'])){
 		$no_of_people = mysqli_real_escape_string($connection, $_POST['people']);
 		$date = mysqli_real_escape_string($connection, $_POST['from']);
 		$time = mysqli_real_escape_string($connection, $_POST['user_time']);
+		$status = mysqli_real_escape_string($connection, $_POST['status']);
 		
 		if(isset($_POST['submit']))
 		{
-			$sql = "INSERT INTO add_reservation(username,user_id,no_of_people,date,time) VALUES('$username','$userid','$no_of_people',STR_TO_DATE('$date','%m/%d/%Y'),'$time')";
+			$sql = "INSERT INTO add_reservation(username,user_id,no_of_people,date,time,status) VALUES('$username','$userid','$no_of_people',STR_TO_DATE('$date','%m/%d/%Y'),'$time','$status')";
 			$result = mysqli_query($connection, $sql);
 			
 			if(!$result)
@@ -74,6 +73,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
 		<label for="from">Select date:</label> <input type="text" id="from" name="from" required/><br><br>
 		Select time:
 		<input type="time" name="user_time" required><br></br>
+		<input type="hidden" name="status" value="pending">
 		<input type="submit" name="submit"><br><br>
 	</form>	
 	<!--We are holding this table for you for = <span id="timer"></span>-->
@@ -177,7 +177,3 @@ $(document).ready(function()
  }
 ?>
 </html>
-
-//<?php
-	//mysqli_close($connection);
-//?>

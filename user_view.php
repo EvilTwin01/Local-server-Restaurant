@@ -44,8 +44,6 @@ if(session_id()=='' || isset($_SESSION['username'])){
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
 	<div class=details_box>
   <?php	
-
-
 	// table reservation details
 	
 	echo "<table width=\"1200\" border=\"1\" cellspacing=\"0px\" cellpadding=\"50px\">";
@@ -55,6 +53,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
     echo     "<th>Total Person</th>";
     echo     "<th>Date</th>";
 	echo     "<th>Time</th>";
+	echo     "<th>Status</th>";
     echo "</tr>";
     echo "<tr>";
     if (mysqli_num_rows($result) > 0) {
@@ -66,6 +65,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
             <td contenteditable="false"><?php echo $row['no_of_people']; ?></td> 
             <td><?php echo date('d/m/Y', strtotime($row['date'])); ?></td> 
             <td><?php echo date('h:i a', strtotime($row['time'])); ?></td>
+            <td><?php echo $row['status']; ?></td>
         </tr>
         <?php
     }

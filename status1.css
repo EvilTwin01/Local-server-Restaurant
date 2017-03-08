@@ -19,13 +19,8 @@
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-bottom-width: 0px;
-	margin-top: -22px;
+	margin-top: -20px;
 }
-.table {
-	margin-left: 262px;
-	margin-top: -801px;
-}
-
 .add {
 	padding-top: 13px;
 	padding-bottom: 13px;
@@ -41,7 +36,6 @@
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-bottom-width: 0px;
-	margin-top: 9px;
 }
 .update {
 	padding-top: 13px;
@@ -91,7 +85,7 @@
 	color: #2A1E1E;
 	padding-right: 0px;
 	margin-left: 1487px;
-	margin-top: -978px;
+	margin-top: -853px;
 }
 
 .credential {
@@ -99,7 +93,7 @@
 	position: absolute;
 	margin-left: 1324px;
 	color: #000000;
-	margin-top: -864px;
+	margin-top: -861px;
 }
 .box {
 	margin-left: 280px;
@@ -149,3 +143,10 @@
 
 .show {display:block;}
 /*end*/
+.details_box {
+	margin-left: 310px;
+	margin-top: -806px;
+}
+.listdrop {
+	margin-left: 387px;
+}

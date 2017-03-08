@@ -29,8 +29,8 @@
     <a href="notification1.php">View Notification</a>
   </div>
 </div>
-	  <li class="view"><a>View Reservation</a></li>
-	  <li class="update"><a>Reservation Status</a></li>
+	  <li class="view"><a href="admin_view.php">View Reservation</a></li>
+	  <li class="update"><a href="reservation_status.php">Reservation Status</a></li>
 	  <li class="delete"><a>Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>

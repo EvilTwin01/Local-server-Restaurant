@@ -1,87 +1,75 @@
 <?php 
-	session_start();
-	if(session_id()=='' || isset($_SESSION['user'])){
-		$dbhost = "localhost";
-		$dbuser = "root";
-		$dbpass = "1234";
-	    $dbname = "coffeecorner";
-		$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-	    if(isset($_POST['delete']))
-		{
-			$noti = mysqli_real_escape_string($connection,$_POST['noti']);
-			
-			$sql1  = "DELETE * FROM notification WHERE noti_id = '$noti'";
-			$result1 = mysqli_query($connection, $sql1);
-			
-			if(!$result1)
-		  {
-			 die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
-		  }		
-		}	
-
-		$sql  = "SELECT * FROM notification WHERE noti_id = '1'";
-		$result = mysqli_query($connection, $sql);
-
-		  if(!$result)
-		  {
-			 die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
-		  }	
+session_start();
+if(session_id()=='' || isset($_SESSION['user'])){
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "1234";
+$dbname = "coffeecorner";
+$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+		
+  $sql  = "SELECT * FROM add_reservation";
+  $result = mysqli_query($connection, $sql);
+	
+  if(!$result)
+  {
+	 die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
+  }
 ?>
 
 <!doctype html>
 <html>
 <head>
-<link href="notification1.css" rel="stylesheet" type="text/css">
+<link href="admin_view.css" rel="stylesheet" type="text/css">
 <meta charset="utf-8">
-<title>Admin | Dashboard</title>
+<title>Admin | View Reservation</title>
 </head>
 
 <body style="background-color: #F9F9F9">
-
 <h2 class="h2">Coffee Corner</h2>
 <nav class="navbar">
   <ul class="ul">
 	  <li class="dashboard"><a href="admin.php">Dashboard</a></li>
-	  	   <div class="dropdown">
+	  <div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Notification</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="notification.php">Add Notification</a>
     <a href="notification1.php">View Notification</a>
   </div>
 </div>
-	  <li class="view"><a>View Reservation</a></li>
+	  <li class="view"><a href="admin_view.php">View Reservation</a></li>
 	  <li class="update"><a>Reservation Status</a></li>
 	  <li class="delete"><a>Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
-<div>
-</div>
 	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
-	<div class="table">
-	<h2>Confirm</h2>
- <?php	
+	
+	<div class=details_box>
+	<h2>Customer Reservation</h2>
+  <?php	
 	// table reservation details
+	
 	echo "<table width=\"1200\" border=\"1\" cellspacing=\"0px\" cellpadding=\"50px\">";
     echo     "<tr>";
-	echo     "<th>Notification</th>";
-	echo     "<th>Confirmation</th>"; 
+    echo     "<th>Username</th>";
+	echo     "<th>Reservation ID</th>";
+    echo     "<th>Total Person</th>";
+    echo     "<th>Date</th>";
+	echo     "<th>Time</th>";
+	echo     "<th>Status</th>";
     echo "</tr>";
     echo "<tr>";
     if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
-    ?>
+        ?>
         <tr>
-            <td><?php echo $row['noti_text']; ?></td>  
-			<td>
-     			<form action="notification1.php" method="post">
-      		    <a href="admin.php"><input type="button" value="SEND" name="send"></a>
-      			<input type="hidden" value="1" name="noti">
-				<a href="noti_delete.php"><input type="button" value="DELETE" name="delete"></a>
-				</form>
-       		</td>
+            <td><?php echo $row['username']; ?></td>
+            <td><?php echo $row['reserve_id']; ?></td>  
+            <td contenteditable="false"><?php echo $row['no_of_people']; ?></td> 
+            <td><?php echo date('d/m/Y', strtotime($row['date'])); ?></td> 
+            <td><?php echo date('h:i a', strtotime($row['time'])); ?></td>
+            <td><?php echo $row['status']; ?></td>
         </tr>
         <?php
     }
@@ -98,7 +86,6 @@ toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {

@@ -29,7 +29,6 @@ if(session_id()=='' || isset($_SESSION['user'])){
   {  
 	  echo "<script type='text/javascript'>alert('You can add 1 notification only!')</script>";
   }
-	header("location: admin.php");
 ?>
 
 <!doctype html>

@@ -55,23 +55,23 @@ if(session_id()=='' || isset($_SESSION['username'])){
 	// table reservation details
 	echo "<table width=\"1200\" border=\"1\" cellspacing=\"0px\" cellpadding=\"50px\">";
     echo     "<tr>";
-    echo     "<th>Username</th>";
 	echo     "<th>Reservation ID</th>";
     echo     "<th>Total Person</th>";
     echo     "<th>Date</th>";
 	echo     "<th>Time</th>";
-	echo     "<th>Edit</th>"; 
+	echo     "<th>Status</th>";
+	echo     "<th>Option</th>"; 
     echo "</tr>";
     echo "<tr>";
     if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
     ?>
         <tr>
-            <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['reserve_id']; ?></td>  
             <td><?php echo $row['no_of_people']; ?></td> 
             <td><?php echo date('d/m/Y', strtotime($row['date'])); ?></td> 
             <td><?php echo date('h:i a', strtotime($row['time'])); ?></td>
+            <td><?php echo $row['status']; ?></td>
 			<td>
 			<a method="post" action="delete1.php">
 				<!--<input type="hidden" value="<?php //$row['reserve_id']; ?>" name="hidden">-->
