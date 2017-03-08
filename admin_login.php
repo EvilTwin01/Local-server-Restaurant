@@ -23,10 +23,6 @@
 	  {
 		  header("location: admin.php");
 	  }
-	  else
-	  {
-		echo "Username/password are incorrect!";
-	  }
   }
 ?>
 
@@ -56,10 +52,11 @@
 	  		{
 				echo "";
 				$_SESSION['user'] = $username;
+				echo "<script type='text/javascript'>alert('You are now logged in!')</script>";
 	  		}
 	  		else
 	  		{
-				echo "Incorrect username/password!";
+				echo "<script type='text/javascript'>alert('Incorrect username/password!')</script>";
 	  		}
   		}
 		?>

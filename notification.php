@@ -25,7 +25,11 @@ if(session_id()=='' || isset($_SESSION['user'])){
 		 die("database query fail!" . mysqli_error($connection));
 	  }
 	  header("location: notification1.php");
-  }}else{header("location: admin.php");}
+  }}else
+  {  
+	  echo "<script type='text/javascript'>alert('You can add 1 notification only!')</script>";
+  }
+	header("location: admin.php");
 ?>
 
 <!doctype html>

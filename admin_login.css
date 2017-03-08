@@ -1,8 +1,4 @@
 @charset "utf-8";
-.background {
-	background-size: cover;
-	background-image: url(img/photo_bg.jpg);
-}
 .h3 {
 	background-color: #665851;
 	margin-top: 66px;
@@ -38,9 +34,10 @@
 	margin-left: -27px;
 	padding-right: 0px;
 }
-
-
-
+.background {
+	background-image: url(img/photo1_bg.jpg);
+	background-size: cover;
+}
 
 .box {
 	background-color: #FFFFFF;

@@ -7,7 +7,18 @@
 	    $dbname = "coffeecorner";
 		$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-	    //$user = $_SESSION['username'];	
+	    if(isset($_POST['delete']))
+		{
+			$noti = mysqli_real_escape_string($connection,$_POST['noti']);
+			
+			$sql1  = "DELETE * FROM notification WHERE noti_id = '$noti'";
+			$result1 = mysqli_query($connection, $sql1);
+			
+			if(!$result1)
+		  {
+			 die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
+		  }		
+		}	
 
 		$sql  = "SELECT * FROM notification WHERE noti_id = '1'";
 		$result = mysqli_query($connection, $sql);
@@ -15,13 +26,13 @@
 		  if(!$result)
 		  {
 			 die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
-		  }
+		  }	
 ?>
 
 <!doctype html>
 <html>
 <head>
-<link href="notification.css" rel="stylesheet" type="text/css">
+<link href="notification1.css" rel="stylesheet" type="text/css">
 <meta charset="utf-8">
 <title>Admin | Dashboard</title>
 </head>
@@ -32,12 +43,18 @@
 <nav class="navbar">
   <ul class="ul">
 	  <li class="dashboard"><a href="admin.php">Dashboard</a></li>
-	  <li class="add"><a href="notification.php">Add notification</a></li>
+	  	   <div class="dropdown">
+  <a class="dropbtn">Notification</a>
+  <div class="dropdown-content">
+    <a href="notification.php">Add Notification</a>
+    <a href="notification1.php">View Notification</a>
+    <a href="#">Link 3</a>
+  </div>
 	  <li class="view"><a>View Reservation</a></li>
 	  <li class="update"><a>Reservation Status</a></li>
 	  <li class="delete"><a>Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
-  </ul>
+  </ul>g
 </nav>
 <div>
 </div>
@@ -59,9 +76,11 @@
         <tr>
             <td><?php echo $row['noti_text']; ?></td>  
 			<td>
-     			<a method="post">
-      				<a href="admin.php"><input type="button" value="SEND" name="send"></a>
-				</a>
+     			<form action="notification1.php" method="post">
+      		    <a href="admin.php"><input type="button" value="SEND" name="send"></a>
+      			<input type="hidden" value="1" name="noti">
+				<a href="noti_delete.php"><input type="button" value="DELETE" name="delete"></a>
+				</form>
        		</td>
         </tr>
         <?php

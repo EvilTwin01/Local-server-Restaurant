@@ -19,7 +19,7 @@
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-bottom-width: 0px;
-	margin-top: -20px;
+	margin-top: -22px;
 }
 .add {
 	padding-top: 13px;
@@ -36,6 +36,7 @@
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-bottom-width: 0px;
+	margin-top: 9px;
 }
 .update {
 	padding-top: 13px;
@@ -85,7 +86,7 @@
 	color: #2A1E1E;
 	padding-right: 0px;
 	margin-left: 1487px;
-	margin-top: -325px;
+	margin-top: -948px;
 }
 
 .credential {
@@ -93,7 +94,7 @@
 	position: absolute;
 	margin-left: 1324px;
 	color: #000000;
-	margin-top: -210px;
+	margin-top: -833px;
 }
 .box {
 	margin-left: 280px;
@@ -104,30 +105,32 @@
 }
 /*start*/
 .dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
+	color: #000000;
+	padding-top: 20px;
+	padding-right: 138px;
+	padding-bottom: 15px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	background-color: #B16B6C;
 }
 
 .dropdown {
 	position: relative;
 	display: inline-block;
-	margin-left: 31px;
+	margin-left: 1px;
 }
+.table {
+	margin-left: 306px;
+	margin-top: -787px;
+}
+
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -139,7 +142,13 @@
     display: block;
 }
 
-.dropdown a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #f1f1f1}
 
-.show {display:block;}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+} 
 /*end*/
