@@ -18,8 +18,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
   }
 	if(isset($_POST['delete']))
 	{
-		header("location: user_view.php");
-		echo "hi!";
+		header("location: admin_view.php");
 	}
   //header("location: user_dashboard.php");
 ?>
@@ -28,7 +27,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
 <html>
 <head>
 <meta charset="utf-8">
-<title>Delete | Dashboard</title>
+<title>User | Delete</title>
 <link href="user_delete.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -46,9 +45,9 @@ if(session_id()=='' || isset($_SESSION['username'])){
   </ul>
 </nav>
 <div>
-	<h3 class="h3">Cancel Your Reservation</h3>
+	<h3 class="h3">Delete Reservation</h3>
 </div>
-	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
+	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
 	<div class="delete1">
     <?php	
@@ -75,7 +74,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
 			<td>
 			<a method="post" action="delete1.php">
 				<!--<input type="hidden" value="<?php //$row['reserve_id']; ?>" name="hidden">-->
-				<a href="delete1.php"><input type="button" value="delete" name="delete"></a><br>
+				<a href="delete1.php"><input type="button" value="DELETE" name="delete"></a><br>
 			</a>
        		</td>
         </tr>
@@ -103,7 +102,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
  } 
  else
  { 
-	header("location: login.php");
+	header("location: admin_login.php");
  }
 ?>
 </html>

@@ -6,14 +6,25 @@
 		$dbpass = "1234";
 	    $dbname = "coffeecorner";
 		$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+	    $user = $_SESSION['user'];	
+
+		$sql  = "SELECT * FROM add_reservation";
+		$result = mysqli_query($connection, $sql);
+
+		  if(!$result)
+		  {
+			 die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
+		  }
 ?>
 
+<!
 <!doctype html>
 <html>
 <head>
-<link href="admin.css" rel="stylesheet" type="text/css">
+<link href="admin_delete1.css" rel="stylesheet" type="text/css">
 <meta charset="utf-8">
-<title>Admin | Dashboard</title>
+<title>Admin | Delete</title>
 </head>
 
 <body style="background-color: #F9F9F9">
@@ -35,11 +46,27 @@
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
-<div>
-	<h3 class="h3">Welcome <?php $_SESSION['user']. "."; ?></h3>
-</div>
 	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
+	<!--drop down -->
+	<div class="ddropdown">
+		<h2>Delete Reservation</h2>
+		<p>Select Reservation ID to delete:</p>
+		<form id="form" action="admin_deletedetail.php" method="get">
+		<?php
+		echo "<select name=\"Reservation_ID\" form=\"form\">";
+		while ($row = mysqli_fetch_array($result)) 
+  		{
+			$gg = $row['reserve_id'];
+   			echo "<option value='" . $gg . "' name=\"reserve_id\">" . $gg . "</option>";
+		}
+		echo "</select>";
+		$_SESSION['reserve'] = $gg;
+		?>
+		<input type="submit" name="form" value="Submit">
+		</form>
+	</div>
+	<!-- end drop down -->
 	
 <script>
 /* When the user clicks on the button, 
