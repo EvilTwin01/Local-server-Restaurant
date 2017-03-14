@@ -42,7 +42,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
 <script src="jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
 </head>
 
-<body>
+<body class="ggwp">
 <h2 class="h2">Coffee Corner</h2>
 	
 <nav class="navbar">

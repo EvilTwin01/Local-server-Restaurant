@@ -13,35 +13,35 @@ if(session_id()=='' || isset($_SESSION['user'])){
 <!doctype html>
 <html>
 <head>
-<link href="admin.css" rel="stylesheet" type="text/css">
+<link href="admin.css?v=random number/string" rel="stylesheet" type="text/css">
 <meta charset="utf-8">
 <title>Admin | Dashboard</title>
 </head>
 
-<body style="background-color: #F9F9F9">
+<body class="ggwp">
 
 <h2 class="h2">Coffee Corner</h2>
 <nav>
-  <ul class="ul">
-	  <li class="dashboard"><a href="admin.php">Dashboard</a></li>
-<div class="dropdown">
+ <ul class="ul">
+	  <li class="dashboard"><a class="dashboard2" href="admin.php">Dashboard</a></li>
+	  <div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Notification</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="notification.php">Add Notification</a>
     <a href="notification1.php">View Notification</a>
   </div>
 </div>
-	  <li class="view"><a href="admin_view.php">View Reservation</a></li>
-	  <li class="update"><a href="reservation_status.php">Reservation Status</a></li>
-	  <li class="delete"><a href="admin_delete.php">Delete Reservation</a></li>
+	  <li class="view"><a class="view2" href="admin_view.php">View Reservation</a></li>
+	  <li class="update"><a class="update2" href="reservation_status.php">Reservation Status</a></li>
+	  <li class="delete"><a class="a_delete" href="admin_delete.php">Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
 <div>
-	<h3 class="h3">Welcome <?php echo $user . "!"; ?></h3>
+	<h1 class="h3">Welcome <?php echo $user . "!"; ?></h1>
 </div>
-	<p class="cre">Logged in as : <?php echo $_SESSION['user']; ?></p>
-	<a class="logout" href="admin_logout.php" name="logout">Log out</a>
+	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
+	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
 	
 <script>
 /* When the user clicks on the button, 

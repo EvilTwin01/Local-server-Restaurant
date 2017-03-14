@@ -21,6 +21,8 @@
 		}
 	
 		header("location: user_view.php");
+	}else if(isset($_GET['save1'])){
+		header("location: user_view.php");
 	}
 
 ?>
@@ -34,21 +36,21 @@
 <link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.datepicker.min.css" rel="stylesheet" type="text/css">
-<link href="deletedetail.css" rel="stylesheet" type="text/css">
+<link href="deletedetail.css?v=random number/string" rel="stylesheet" type="text/css">
 <script src="jQueryAssets/jquery-1.11.1.min.js"></script>
 <script src="jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
 </head>
 
-<body>
+<body class="ggwp">
 	<h2 class="h2">Coffee Corner</h2>
 
 <nav class="navbar">
   <ul class="ul">
-	  <li class="dashboard"><a>Dashboard</a></li>
-	  <li class="add"><a>Make a reservation</a></li>
-	  <li class="view"><a>View Reservation</a></li>
-	  <li class="update"><a href="user_update.php">Update Reservation</a></li>
-	  <li class="delete"><a href="user_delete.php">Delete Reservation</a></li>
+	  <li class="dashboard"><a class="dashtext" href="user_dashboard.php">Dashboard</a></li>
+	  <li class="add"><a class="add2" href="user_addreservation.php">Make a reservation</a></li>
+	  <li class="view"><a class="view2" href="user_view.php">View Reservation</a></li>
+	  <li class="update"><a class="update2" href="user_update.php">Update Reservation</a></li>
+	  <li class="delete"><a class="delete2" href="user_delete.php">Cancel Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
@@ -101,7 +103,9 @@
 	echo "<div class=\"addform\">";
 	echo "<form method=\"get\" action=\"deletedetail.php\">";
 	echo    "<input type=\"hidden\" name=\"aa\" value=\"$identifier\">";
-	echo	"<input type=\"submit\" name=\"save\" value=\"Delete\"><br><br>";
+	echo "<h3>Are you sure to cancel?</h3>";
+	echo	"<input class=\"cancel\" type=\"submit\" name=\"save\" value=\"YES\">";
+	echo	"<input class=\"cancel\" type=\"submit\" name=\"save1\" value=\"NO\"><br><br>";
 	echo	"</form>";	
 	echo "</div>";
 }

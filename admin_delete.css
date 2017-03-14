@@ -1,7 +1,7 @@
 @charset "utf-8";
 .ul {
 	list-style-type: none;
-	background-color: #FFFFFF;
+	background-color: #4CD0E1;
 	color: #444444;
 	font-size: medium;
 	font-style: normal;
@@ -14,7 +14,7 @@
 }
 .dashboard {
 	padding-top: 13px;
-	padding-bottom: 13px;
+	padding-bottom: 11px;
 	border-color: #FDFDFD;
 	border-top-style: solid;
 	border-bottom-style: solid;
@@ -123,12 +123,11 @@
 .dropbtn {
 	color: black;
 	padding-top: 16px;
-	padding-right: 161px;
+	padding-right: 159px;
 	padding-bottom: 16px;
 	font-size: 16px;
-	border: none;
-	cursor: pointer;
 	margin-left: -36px;
+	background-color: #4CD0E1;
 }
 
 .dropdown {
@@ -142,9 +141,6 @@
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
 }
 
 .dropdown-content a {
@@ -153,9 +149,6 @@
     text-decoration: none;
     display: block;
 }
-
-.dropdown a:hover {background-color: #f1f1f1}
-
 
 .show {display:block;}
 /*end*/
@@ -177,6 +170,18 @@ th {
     color: white;
 }
 .a_delete {
+	text-decoration: none;
+	color: #000000;
+}
+.dashboard2 {
+	text-decoration: none;
+	color: #000000;
+}
+.view2{
+	text-decoration: none;
+	color: #000000;
+}
+.update2{
 	text-decoration: none;
 	color: #000000;
 }

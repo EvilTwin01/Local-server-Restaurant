@@ -37,22 +37,22 @@
 <title>Admin | Dashboard</title>
 </head>
 
-<body style="background-color: #F9F9F9">
+<body class="ggwp">
 
 <h2 class="h2">Coffee Corner</h2>
 <nav class="navbar">
   <ul class="ul">
-	  <li class="dashboard"><a href="admin.php">Dashboard</a></li>
-	  	   <div class="dropdown">
+	  <li class="dashboard"><a class="dashboard2" href="admin.php">Dashboard</a></li>
+	  <div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Notification</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="notification.php">Add Notification</a>
     <a href="notification1.php">View Notification</a>
   </div>
 </div>
-	  <li class="view"><a>View Reservation</a></li>
-	  <li class="update"><a>Reservation Status</a></li>
-	  <li class="delete"><a>Delete Reservation</a></li>
+	  <li class="view"><a class="view2" href="admin_view.php">View Reservation</a></li>
+	  <li class="update"><a class="update2" href="reservation_status.php">Reservation Status</a></li>
+	  <li class="delete"><a class="a_delete" href="admin_delete.php">Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
@@ -61,13 +61,13 @@
 	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
 	<div class="table">
-	<h2>Confirm</h2>
+	<h2>Notification Details</h2>
  <?php	
 	// table reservation details
 	echo "<table width=\"1200\" border=\"1\" cellspacing=\"0px\" cellpadding=\"50px\">";
     echo     "<tr>";
 	echo     "<th>Notification</th>";
-	echo     "<th>Confirmation</th>"; 
+	echo     "<th>Option</th>"; 
     echo "</tr>";
     echo "<tr>";
     if (mysqli_num_rows($result) > 0) {
@@ -85,7 +85,9 @@
         </tr>
         <?php
     }
-}
+}else{
+		echo "<script type='text/javascript'>alert('No notification found. Please add notification first!'); window.location.href = \"notification.php\";</script>"; 
+	}
      echo         "</tr>";
      echo  "</table>";
 	// end table reservation details

@@ -15,7 +15,7 @@
 		$date = mysqli_real_escape_string($connection, $_GET['from']);
 		$time = mysqli_real_escape_string($connection, $_GET['user_time']);
 		
-		$sql1 = "UPDATE add_reservation SET no_of_people = '$no_of_people',date = STR_TO_DATE('$date','%m/%d/%Y'), time = '$time' WHERE reserve_id = '$id'";
+		$sql1 = "UPDATE add_reservation SET no_of_people = '$no_of_people',date = STR_TO_DATE('$date','%m/%d/%Y'), time = '$time',status = 'Pending' WHERE reserve_id = '$id'";
 		$result1 = mysqli_query($connection, $sql1);
 		
 		if($result1==1)

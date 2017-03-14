@@ -17,7 +17,7 @@
 <link href="user_dash.css?v=random number/string" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body class="ggwp">
 	<h2 class="h2">Coffee Corner</h2>
 
 <nav class="navbar">
@@ -31,7 +31,7 @@
   </ul>
 </nav>
 <div>
-	<h3 class="h3">Welcome <?php echo $_SESSION['username']. "."; ?></h3>
+	<h1 class="h3">Welcome <?php echo $_SESSION['username']. "."; ?></h1>
 </div>
 	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
@@ -43,7 +43,7 @@
 		while($row = mysqli_fetch_array($result))
 		{	
 	?>
-	<marquee class="marque" bgcolor="#5CD8CE"><?php echo $row['noti_text']; ?></marquee>
+	<marquee class="marque" bgcolor="##FFFFFF"><?php echo $row['noti_text']; ?></marquee>
 	<?php } ?>
 </div>
 </body>

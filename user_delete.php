@@ -45,7 +45,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
   </ul>
 </nav>
 <div>
-	<h3 class="h3">Delete Reservation</h3>
+	<h3 class="h3">Cancel Reservation</h3>
 </div>
 	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
@@ -87,7 +87,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
 		$result = mysqli_query($connection, $sql);
 	?>
 		<h2>Reservation Update</h2>
-		<p>Select Reservation ID to delete:</p>
+		<p>Select reservation id you wish to cancel:</p>
 		<form id="form" action="deletedetail.php" method="get">
 		<?php
 		echo "<select name=\"Reservation_ID\" form=\"form\">";

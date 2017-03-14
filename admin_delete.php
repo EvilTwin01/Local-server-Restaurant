@@ -35,7 +35,7 @@ if(session_id()=='' || isset($_SESSION['user'])){
 <h2 class="h2">Coffee Corner</h2>
 <nav class="navbar">
   <ul class="ul">
-	  <li class="dashboard"><a href="admin.php">Dashboard</a></li>
+	  <li class="dashboard"><a class="dashboard2" href="admin.php">Dashboard</a></li>
 	  <div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Notification</button>
   <div id="myDropdown" class="dropdown-content">
@@ -43,9 +43,9 @@ if(session_id()=='' || isset($_SESSION['user'])){
     <a href="notification1.php">View Notification</a>
   </div>
 </div>
-	  <li class="view"><a href="admin_view.php">View Reservation</a></li>
-	  <li class="update"><a href="reservation_status.php">Reservation Status</a></li>
-	  <li class="delete"><a class="a_delete" href="admin_delete.php">Cancel Reservation</a></li>
+	  <li class="view"><a class="view2" href="admin_view.php">View Reservation</a></li>
+	  <li class="update"><a class="update2" href="reservation_status.php">Reservation Status</a></li>
+	  <li class="delete"><a class="a_delete" href="admin_delete.php">Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>

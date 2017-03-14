@@ -81,14 +81,14 @@
 	color: #FFFFFF;
 	padding-right: 0px;
 	margin-left: 1477px;
-	margin-top: -117px;
+	margin-top: -134px;
 }
 
 .credential {
 	padding-right: 67px;
 	position: absolute;
 	margin-left: 1313px;
-	margin-top: -117px;
+	margin-top: -134px;
 	color: #FFFFFF;
 }
 .box {
@@ -99,10 +99,12 @@
 	margin-top: 30px;
 }
 .marque {
-	margin-left: 218px;
+	margin-left: 235px;
 	padding-top: 11px;
 	padding-bottom: 11px;
-
+	background-color: #FFFFFF;
+	padding-right: 29px;
+	margin-right: -23px;
 }
 .add2 {
 	text-decoration: none;
