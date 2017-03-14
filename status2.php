@@ -21,6 +21,20 @@
 	
 		header("location: admin_view.php");
 	}
+	if(isset($_GET['save1']))
+	{
+		$id = mysqli_real_escape_string($connection, $_GET['aa']);
+		
+		$sql1 = "UPDATE add_reservation SET status = 'Pending' WHERE reserve_id = '$id'";
+		$result1 = mysqli_query($connection, $sql1);
+		
+		if(!$result1)
+		{
+			die("database query fail!" . mysqli_error($connection));
+		}
+	
+		header("location: admin_view.php");
+	}
 ?>
 
 <!doctype html>
@@ -28,10 +42,10 @@
 <head>
 <meta charset="utf-8">
 <title>User | Dashboard</title>
-<link href="status2.css" rel="stylesheet" type="text/css">
+<link href="status2.css?v=random number/string" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body class="ggwp">
 	<h2 class="h2">Coffee Corner</h2>
 
 <nav class="navbar">
@@ -40,7 +54,7 @@
 	  <li class="add"><a href="user_addreservation.php">Make a reservation</a></li>
 	  <li class="view"><a href="user_view.php">View Reservation</a></li>
 	  <li class="update"><a href="reservation_status.php">Update Reservation</a></li>
-	  <li class="delete"><a>Delete Reservation</a></li>
+	  <li class="delete"><a href="admin_delete.php">Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
@@ -49,7 +63,7 @@
 </div>
 	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
-	<div class="box">
+	<div class="details_box">
 	<?php
 	//$identifier =  '';
 	if(isset($_GET['form']))
@@ -89,12 +103,14 @@
 	echo "</div>";
 	//end table
 	echo "<div class=\"addform\">";
-	echo "<h3>Are you confirm?</h3>";
+	echo "<br><br>";
+	echo "<h3>Are you sure?</h3>";
 	echo "<form method=\"get\" action=\"status2.php\">";
 	echo    "Reservation ID: ";
 	echo    "<input type=\"text\" value=\"$identifier\" disabled><br><br>";
 	echo    "<input type=\"hidden\" name=\"aa\" value=\"$identifier\">";
-	echo	"<input type=\"submit\" name=\"save\" value=\"Approved\"><br><br>";
+	echo	"<input class=\"save\" type=\"submit\" name=\"save\" value=\"Approved\">";
+	echo	"<input class=\"save1\" type=\"submit\" name=\"save1\" value=\"Pending\">";
 	echo	"</form>";	
 	echo "</div>";
 }

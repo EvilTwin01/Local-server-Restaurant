@@ -19,12 +19,12 @@ $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 <!doctype html>
 <html>
 <head>
-<link href="reservation_status.css" rel="stylesheet" type="text/css">
+<link href="reservation_status.css?v={random number/string}" rel="stylesheet" type="text/css">
 <meta charset="utf-8">
 <title>Admin | Status</title>
 </head>
 
-<body style="background-color: #F9F9F9">
+<body class="ggwp">
 <h2 class="h2">Coffee Corner</h2>
 <nav class="navbar">
   <ul class="ul">
@@ -37,8 +37,8 @@ $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
   </div>
 </div>
 	  <li class="view"><a href="admin_view.php">View Reservation</a></li>
-	  <li class="update"><a>Reservation Status</a></li>
-	  <li class="delete"><a>Delete Reservation</a></li>
+	  <li class="update"><a href="reservation_status.php">Reservation Status</a></li>
+	  <li class="delete"><a href="admin_delete.php">Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
@@ -58,7 +58,6 @@ $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
     echo     "<th>Date</th>";
 	echo     "<th>Time</th>";
 	echo     "<th>Status</th>";
-	echo     "<th>Option</th>";
     echo "</tr>";
     echo "<tr>";
     if (mysqli_num_rows($result) > 0) {
@@ -71,21 +70,38 @@ $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
             <td><?php echo date('d/m/Y', strtotime($row['date'])); ?></td> 
             <td><?php echo date('h:i a', strtotime($row['time'])); ?></td>
             <td><?php echo $row['status']; ?></td>
-            <td>
-     			<a method="post" action="reservation_status.php">
-      				<a href="status1.php"><input type="button" value="UPDATE"></a>
-				</a>
-       		</td>
         </tr>
         <?php
     }
-}
+}else{
+		echo "<script type='text/javascript'>alert('No reservation to be approved. No customer yet!'); window.location.href = \"admin.php\";</script>"; 
+	}
      echo         "</tr>";
      echo  "</table>";
 	// end table reservation details
   ?>
 	</div>
-	
+	<!--drop down -->
+	<div class="listdrop">
+	<?php 
+		$sql  = "SELECT * FROM add_reservation";
+		$result = mysqli_query($connection, $sql);	
+	?>
+		<h4>Select a Reservation ID to approved:</h4>
+		<form id="form" action="status2.php" method="get">
+		<?php
+		echo "<select name=\"Reservation_ID\" form=\"form\">";
+		while ($row = mysqli_fetch_array($result)) 
+  		{
+			$gg = $row['reserve_id'];
+   			 echo "<option value='" . $gg . "' name=\"reserve_id\">" . $gg . "</option>";
+		}
+		echo "</select>";	
+		?>
+		<input type="submit" name="form" value="Submit">
+		</form>
+	</div>
+	<!-- end drop down -->
 <script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */

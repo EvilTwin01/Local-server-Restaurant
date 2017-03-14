@@ -78,10 +78,10 @@
 .button_logout {
 	text-decoration: none;
 	position: absolute;
-	color: #2A1E1E;
+	color: #FFFFFF;
 	padding-right: 0px;
 	margin-left: 1477px;
-	margin-top: -119px;
+	margin-top: -117px;
 }
 
 .credential {
@@ -103,4 +103,52 @@
 	padding-top: 11px;
 	padding-bottom: 11px;
 
+}
+.add2 {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.dashtext {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.view2{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.update2{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.delete2{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+tr{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+tr:hover {
+	background-color: #ddd;
+}
+
+th {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	padding-top: 15px;
+	padding-bottom: 15px;
+    text-align: center;
+    background-color: #382E1C;
+    color: white;
+}
+.ggwp {
+	background-image: url(img/kk.jpg);
+	background-size: cover;
+}.button_edit {
+	background-color: #337AB7;
+	padding-top: 5px;
+	padding-right: 18px;
+	padding-bottom: 5px;
+	padding-left: 18px;
+	margin-left: 8px;
+	color: #FFFFFF;
 }

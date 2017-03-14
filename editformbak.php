@@ -18,12 +18,10 @@
 		$sql1 = "UPDATE add_reservation SET no_of_people = '$no_of_people',date = STR_TO_DATE('$date','%m/%d/%Y'), time = '$time' WHERE reserve_id = '$id'";
 		$result1 = mysqli_query($connection, $sql1);
 		
-		if(!$result1)
+		if($result1==1)
 		{
-			die("database query fail!" . mysqli_error($connection));
+			header("location: user_view.php?message=Succesfully Update!");
 		}
-	
-		header("location: user_view.php");
 	}
 
 ?>
@@ -33,7 +31,7 @@
 <head>
 <meta charset="utf-8">
 <title>User | Dashboard</title>
-<link href="editform.css" rel="stylesheet" type="text/css">
+<link href="editform.css?v=random number/string" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.datepicker.min.css" rel="stylesheet" type="text/css">
@@ -41,16 +39,16 @@
 <script src="jQueryAssets/jquery.ui-1.10.4.datepicker.min.js"></script>
 </head>
 
-<body>
+<body class="ggwp">
 	<h2 class="h2">Coffee Corner</h2>
 
 <nav class="navbar">
   <ul class="ul">
-	  <li class="dashboard"><a>Dashboard</a></li>
-	  <li class="add"><a>Make a reservation</a></li>
-	  <li class="view"><a>View Reservation</a></li>
-	  <li class="update"><a href="user_update.php">Update Reservation</a></li>
-	  <li class="delete"><a>Delete Reservation</a></li>
+	  <li class="dashboard"><a class="dashtext" href="user_dashboard.php">Dashboard</a></li>
+	  <li class="add"><a class="add2" href="user_addreservation.php">Make a reservation</a></li>
+	  <li class="view"><a class="view2" href="user_view.php">View Reservation</a></li>
+	  <li class="update"><a class="update2" href="user_update.php">Update Reservation</a></li>
+	  <li class="delete"><a class="delete2" href="user_delete.php">Cancel Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
@@ -104,12 +102,12 @@
 	echo    "Reservation ID: ";
 	echo    "<input type=\"text\" value=\"$identifier\" disabled><br><br>";
 	echo	"Number of people: ";
-	echo	"<input type=\"number\" name=\"people\" min=\"1\" max=\"20\"><br></br>";
-	echo	"<label for=\"from\">Select date:</label> <input type=\"text\" id=\"from\" name=\"from\"/><br><br>";
+	echo	"<input type=\"number\" name=\"people\" min=\"1\" max=\"20\" required><br></br>";
+	echo	"<label for=\"from\">Select date:</label> <input type=\"text\" id=\"from\" name=\"from\" required/><br><br>";
 	echo	"Select time:";
-	echo	"<input type=\"time\" name=\"user_time\"><br></br>";
+	echo	"<input type=\"time\" name=\"user_time\" required><br></br>";
 	echo    "<input type=\"hidden\" name=\"aa\" value=\"$identifier\">";
-	echo	"<input type=\"submit\" name=\"save\" value=\"save\"><br><br>";
+	echo	"<input class=\"confirm\" type=\"submit\" name=\"save\" value=\"CONFIRM\"><br><br>";
 	echo	"</form>";	
 	echo "</div>";
 }

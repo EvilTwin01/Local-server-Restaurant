@@ -12,6 +12,11 @@ if(session_id()=='' || isset($_SESSION['username'])){
   $sql  = "(SELECT * FROM add_reservation WHERE username like '$user')";
   $result = mysqli_query($connection, $sql);
 	
+  if(!empty($_GET['message'])) {
+    $message = $_GET['message'];
+	echo "<script type='text/javascript'>alert('$message'); window.location.href = \"user_view.php\";</script>"; 
+  }
+
   if(!$result)
   {
 	 die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
@@ -24,19 +29,19 @@ if(session_id()=='' || isset($_SESSION['username'])){
 <head>
 <meta charset="utf-8">
 <title>User | View Reservation</title>
-<link href="user_view.css" rel="stylesheet" type="text/css">
+<link href="user_view.css?v=random number/string" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body class="ggwp">
 	<h2 class="h2">Coffee Corner</h2>
 	<h3 class="details">Reservation Details</h3>
 <nav class="navbar">
   <ul class="ul">
-	  <li class="dashboard"><a href="user_dashboard.php">Dashboard</a></li>
-	  <li class="add"><a href="user_addreservation.php">Make a reservation</a></li>
-	  <li class="view"><a href="user_view.php">View Reservation</a></li>
-	  <li class="update"><a href="user_update.php">Update Reservation</a></li>
-	  <li class="delete"><a href="user_delete.php">Delete Reservation</a></li>
+	  <li class="dashboard"><a class="dashtext" href="user_dashboard.php">Dashboard</a></li>
+	  <li class="add"><a class="add2" href="user_addreservation.php">Make a reservation</a></li>
+	  <li class="view"><a class="view2" href="user_view.php">View Reservation</a></li>
+	  <li class="update"><a class="update2" href="user_update.php">Update Reservation</a></li>
+	  <li class="delete"><a class="delete2" href="user_delete.php">Cancel Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
@@ -69,7 +74,9 @@ if(session_id()=='' || isset($_SESSION['username'])){
         </tr>
         <?php
     }
-}
+}else{
+		echo "<script type='text/javascript'>alert('No reservation to be displayed. You need to add some to view.'); window.location.href = \"user_addreservation.php\";</script>"; 
+	}
      echo         "</tr>";
      echo  "</table>";
 	// end table reservation details

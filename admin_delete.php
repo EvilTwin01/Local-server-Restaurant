@@ -45,7 +45,7 @@ if(session_id()=='' || isset($_SESSION['user'])){
 </div>
 	  <li class="view"><a href="admin_view.php">View Reservation</a></li>
 	  <li class="update"><a href="reservation_status.php">Reservation Status</a></li>
-	  <li class="delete"><a class="a_delete" href="admin_delete.php">Delete Reservation</a></li>
+	  <li class="delete"><a class="a_delete" href="admin_delete.php">Cancel Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
@@ -53,7 +53,7 @@ if(session_id()=='' || isset($_SESSION['user'])){
 	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
 	
 	<div class="delete1">
-   	<h3>Delete Reservation</h3>
+   	<h2>Delete Reservation</h2>
     <?php	
 	// table reservation details
 	echo "<table width=\"1200\" border=\"1\" cellspacing=\"0px\" cellpadding=\"50px\">";
@@ -79,7 +79,9 @@ if(session_id()=='' || isset($_SESSION['user'])){
         </tr>
         <?php
     }
-}
+}else{
+		echo "<script type='text/javascript'>alert('No reservation to be deleted. No customer yet!'); window.location.href = \"admin.php\";</script>"; 
+	}
      echo         "</tr>";
      echo  "</table>";
 	// end table reservation details

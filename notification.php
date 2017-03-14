@@ -27,7 +27,7 @@ if(session_id()=='' || isset($_SESSION['user'])){
 	  header("location: notification1.php");
   }}else
   {  
-	  echo "<script type='text/javascript'>alert('You can add 1 notification only!')</script>";
+	  echo "<script type='text/javascript'>alert('Only 1 notification can be added. Delete some!'); window.location.href = \"notification1.php\";</script>"; 
   }
 ?>
 

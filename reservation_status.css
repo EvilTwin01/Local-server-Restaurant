@@ -85,7 +85,7 @@
 	color: #2A1E1E;
 	padding-right: 0px;
 	margin-left: 1487px;
-	margin-top: -853px;
+	margin-top: -860px;
 }
 
 .credential {
@@ -93,7 +93,7 @@
 	position: absolute;
 	margin-left: 1324px;
 	color: #000000;
-	margin-top: -861px;
+	margin-top: -860px;
 }
 .box {
 	margin-left: 280px;
@@ -146,4 +146,27 @@
 .details_box {
 	margin-left: 310px;
 	margin-top: -806px;
+}
+.listdrop {
+	margin-left: 306px;
+}
+.ggwp {
+	background-image: url(img/teko.jpg);
+	background-size: cover;
+}
+tr{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+tr:hover {
+	background-color: #ddd;
+}
+
+th {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	padding-top: 15px;
+	padding-bottom: 15px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
 }

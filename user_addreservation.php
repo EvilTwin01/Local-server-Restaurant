@@ -34,7 +34,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
 <head>
 <meta charset="utf-8">
 <title>User | Add Reservation</title>
-<link href="user_add.css" rel="stylesheet" type="text/css">
+<link href="user_add.css?v=random number/string" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
 <link href="jQueryAssets/jquery.ui.datepicker.min.css" rel="stylesheet" type="text/css">
@@ -49,9 +49,9 @@ if(session_id()=='' || isset($_SESSION['username'])){
   <ul class="ul">
 	  <li class="dashboard"><a class="dashtext" href="user_dashboard.php">Dashboard</a></li>
 	  <li class="add"><a class="add2" href="user_addreservation.php">Make a reservation</a></li>
-	  <li class="view"><a href="user_view.php">View Reservation</a></li>
-	  <li class="update"><a href=user_update.php"">Update Reservation</a></li>
-	  <li class="delete"><a href="user_delete.php">Delete Reservation</a></li>
+	  <li class="view"><a class="view2" href="user_view.php">View Reservation</a></li>
+	  <li class="update"><a class="update2" href="user_update.php">Update Reservation</a></li>
+	  <li class="delete"><a class="delete2" href="user_delete.php">Cancel Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>

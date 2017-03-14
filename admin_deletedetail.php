@@ -53,7 +53,7 @@
 	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
 	<!-- edit -->
-	<h3 class="sure">Are you sure to delete?</h3>
+	<h2 class="sure">Are you sure to delete?</h2>
 <?php
 	//$identifier =  '';
 	if(isset($_GET['form']))

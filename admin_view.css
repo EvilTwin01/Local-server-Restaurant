@@ -157,3 +157,19 @@
 	background-image: url(img/teko.jpg);
 	background-size: cover;
 }
+tr{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+tr:hover {
+	background-color: #ddd;
+}
+
+th {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	padding-top: 15px;
+	padding-bottom: 15px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}

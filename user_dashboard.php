@@ -14,7 +14,7 @@
 <head>
 <meta charset="utf-8">
 <title>User | Dashboard</title>
-<link href="user_dash.css?v={random number/string}" rel="stylesheet" type="text/css">
+<link href="user_dash.css?v=random number/string" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -22,11 +22,11 @@
 
 <nav class="navbar">
   <ul class="ul">
-	  <li class="dashboard"><a href="user_dashboard.php">Dashboard</a></li>
-	  <li class="add"><a href="user_addreservation.php">Make a reservation</a></li>
-	  <li class="view"><a href="user_view.php">View Reservation</a></li>
-	  <li class="update"><a>Update Reservation</a></li>
-	  <li class="delete"><a>Delete Reservation</a></li>
+	  <li class="dashboard"><a class="dashtext" href="user_dashboard.php">Dashboard</a></li>
+	  <li class="add"><a class="add2" href="user_addreservation.php">Make a reservation</a></li>
+	  <li class="view"><a class="view2" href="user_view.php">View Reservation</a></li>
+	  <li class="update"><a class="update2" href="user_update.php">Update Reservation</a></li>
+	  <li class="delete"><a class="delete2" href="user_delete.php">Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>

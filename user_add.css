@@ -1,7 +1,7 @@
 @charset "utf-8";
 .ul {
 	list-style-type: none;
-	background-color: #7E3012;
+	background-color: #795227;
 	color: #FFFFFF;
 	font-size: medium;
 	font-style: normal;
@@ -69,7 +69,7 @@
 
 }
 .h2 {
-	background-color: #7E3012;
+	background-color: #795227;
 	color: #FFFFFF;
 	margin-top: -11px;
 	margin-left: -8px;
@@ -89,7 +89,7 @@
 .credential {
 	position: absolute;
 	margin-top: -80px;
-	padding-left: 1297px;
+	padding-left: 1321px;
 	color: #FFFFFF;
 }
 
@@ -98,6 +98,18 @@
 	color: #FFFFFF;
 }
 .dashtext {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.view2{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.update2{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.delete2{
 	text-decoration: none;
 	color: #FFFFFF;
 }
