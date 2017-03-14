@@ -1,4 +1,7 @@
 @charset "utf-8";
+.body{
+	
+}
 .ul {
 	list-style-type: none;
 	background-color: #FFFFFF;
@@ -53,6 +56,11 @@
 	border-bottom-style: solid;
 	border-right-style: none;
 }
+.gg {
+	padding-left: 985px;
+	position: relative;
+	padding-bottom: 15px;
+}
 .border-bottom {
 	padding-bottom: 523px;
 }
@@ -65,8 +73,6 @@
 	color: #000000;
 
 }
-
-
 .h2 {
 	background-color: #4CD0E1;
 	color: #FFFFFF;
@@ -85,7 +91,7 @@
 	color: #2A1E1E;
 	padding-right: 0px;
 	margin-left: 1487px;
-	margin-top: -853px;
+	margin-top: -860px;
 }
 
 .credential {
@@ -93,7 +99,7 @@
 	position: absolute;
 	margin-left: 1324px;
 	color: #000000;
-	margin-top: -861px;
+	margin-top: -860px;
 }
 .box {
 	margin-left: 280px;
@@ -146,4 +152,8 @@
 .details_box {
 	margin-left: 310px;
 	margin-top: -806px;
+}
+.ggwp {
+	background-image: url(img/teko.jpg);
+	background-size: cover;
 }

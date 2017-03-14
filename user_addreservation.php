@@ -73,7 +73,7 @@ if(session_id()=='' || isset($_SESSION['username'])){
 		<label for="from">Select date:</label> <input type="text" id="from" name="from" required/><br><br>
 		Select time:
 		<input type="time" name="user_time" required><br></br>
-		<input type="hidden" name="status" value="pending">
+		<input type="hidden" name="status" value="Pending">
 		<input type="submit" name="submit"><br><br>
 	</form>	
 	<!--We are holding this table for you for = <span id="timer"></span>-->

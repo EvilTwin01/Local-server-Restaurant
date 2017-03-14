@@ -65,8 +65,6 @@
 	color: #000000;
 
 }
-
-
 .h2 {
 	background-color: #4CD0E1;
 	color: #FFFFFF;
@@ -85,7 +83,7 @@
 	color: #2A1E1E;
 	padding-right: 0px;
 	margin-left: 1487px;
-	margin-top: -853px;
+	margin-top: -860px;
 }
 
 .credential {
@@ -93,7 +91,7 @@
 	position: absolute;
 	margin-left: 1324px;
 	color: #000000;
-	margin-top: -861px;
+	margin-top: -860px;
 }
 .box {
 	margin-left: 280px;
@@ -147,9 +145,12 @@
 	margin-left: 310px;
 	margin-top: -806px;
 }
-.listdrop {
-	margin-left: 387px;
+.gg {
+	padding-left: 985px;
+	position: relative;
+	padding-bottom: 15px;
 }
-.box {
-	margin-left: 30px;
+.ggwp {
+	background-image: url(img/teko.jpg);
+	background-size: cover;
 }

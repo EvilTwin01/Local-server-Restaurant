@@ -57,7 +57,7 @@
    			 echo "<option value='" . $gg . "' name=\"reserve_id\">" . $gg . "</option>";
 		}
 		echo "</select>";
-		$_SESSION['reserve'] = $gg;
+		//$_SESSION['reserve'] = $gg;
 		?>
 		<input type="submit" name="form" value="Submit">
 		</form>

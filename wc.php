@@ -31,36 +31,55 @@ $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 	}
 ?>
 
-<!doctype html>
+
+
+<!DOCTYPE html>
 <html>
 <head>
-<link href="admin_view.css?v=random number/string" rel="stylesheet" type="text/css">
-<meta charset="utf-8">
-<title>Admin | View Reservation</title>
-</head>
+<style>
+body {
+    margin: 0;
+}
 
-<body class="ggwp">
-<h2 class="h2">Coffee Corner</h2>
-<nav class="navbar">
-  <ul class="ul">
-	  <li class="dashboard"><a href="admin.php">Dashboard</a></li>
-	  <div class="dropdown">
-<button onclick="myFunction()" class="dropbtn">Notification</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="notification.php">Add Notification</a>
-    <a href="notification1.php">View Notification</a>
-  </div>
-</div>
-	  <li class="view"><a href="admin_view.php">View Reservation</a></li>
-	  <li class="update"><a href="reservation_status.php">Reservation Status</a></li>
-	  <li class="delete"><a href="admin_delete.php">Delete Reservation</a></li>
-	  <li class="border-bottom"><a></a></li>
-  </ul>
-</nav>
-	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
-	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
-	
-	<div class=details_box>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+<div class=details_box>
 	<h2>Customer Reservation</h2>
 	<div class="gg">
 <form action="" method="post">
@@ -105,28 +124,6 @@ $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
   ?>
 	</div>
 
-
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 </body>
 
 <?php 

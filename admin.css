@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import url("admin_delete.css");
 .ul {
 	list-style-type: none;
 	background-color: #FFFFFF;
@@ -46,6 +45,9 @@
 	border-bottom-style: solid;
 	border-bottom-width: 0px;
 }
+.border-bottom {
+	padding-bottom: 523px;
+}
 .delete {
 	padding-top: 13px;
 	padding-bottom: 13px;
@@ -54,9 +56,12 @@
 	border-bottom-style: solid;
 	border-right-style: none;
 }
-.border-bottom {
-	padding-bottom: 523px;
+.logout {
+	margin-left: 1390px;
+	position: relative;
+	margin-top: -916px;
 }
+
 .h3 {
 	padding-top: 0px;
 	margin-top: -756px;
@@ -66,7 +71,6 @@
 	color: #000000;
 
 }
-
 
 .h2 {
 	background-color: #4CD0E1;
@@ -79,22 +83,6 @@
 	margin-right: -13px;
 	-webkit-box-shadow: 0 2px 96px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	box-shadow: 0 2px 96px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.button_logout {
-	text-decoration: none;
-	position: absolute;
-	color: #2A1E1E;
-	padding-right: 0px;
-	margin-left: 1487px;
-	margin-top: -325px;
-}
-
-.credential {
-	padding-right: 67px;
-	position: absolute;
-	margin-left: 1324px;
-	color: #000000;
-	margin-top: -210px;
 }
 .box {
 	margin-left: 280px;
@@ -144,3 +132,9 @@
 
 .show {display:block;}
 /*end*/
+.details_box {
+	margin-left: 310px;
+	margin-top: -806px;
+}
+.cre {
+}

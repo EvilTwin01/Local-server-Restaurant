@@ -21,6 +21,11 @@
 	border-bottom-width: 0px;
 	margin-top: -20px;
 }
+.delete1 {
+	margin-left: 303px;
+	margin-top: -785px;
+}
+
 .add {
 	padding-top: 13px;
 	padding-bottom: 13px;
@@ -52,6 +57,20 @@
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-right-style: none;
+	background-color: #DDDDDD;
+}
+.delete:hover{
+	background-color: #ddd;
+}
+.update:hover{
+	background-color: #ddd;
+}
+.delete:active{
+	background-color: #DDDDDD;
+}
+.select {
+	margin-left: 309px;
+	position: absolute;
 }
 .border-bottom {
 	padding-bottom: 523px;
@@ -63,9 +82,7 @@
 	margin-right: 910px;
 	margin-left: 292px;
 	color: #000000;
-
 }
-
 
 .h2 {
 	background-color: #4CD0E1;
@@ -84,8 +101,8 @@
 	position: absolute;
 	color: #2A1E1E;
 	padding-right: 0px;
+	margin-top: -860px;
 	margin-left: 1487px;
-	margin-top: -862px;
 }
 
 .credential {
@@ -104,16 +121,14 @@
 }
 /*start*/
 .dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
+	color: black;
+	padding-top: 16px;
+	padding-right: 161px;
+	padding-bottom: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	margin-left: -36px;
 }
 
 .dropdown {
@@ -140,11 +155,31 @@
 }
 
 .dropdown a:hover {background-color: #f1f1f1}
-.delete1 {
-	margin-left: 273px;
-	margin-top: -732px;
-}
 
 
 .show {display:block;}
 /*end*/
+
+tr{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+tr:hover {
+	background-color: #ddd;
+}
+
+th {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	padding-top: 15px;
+	padding-bottom: 15px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}.a_delete {
+	text-decoration: none;
+	color: #000000;
+}
+.ggwp {
+	background-image: url(img/teko.jpg);
+	background-size: cover;
+}

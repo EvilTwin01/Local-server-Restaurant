@@ -14,7 +14,7 @@
 <head>
 <meta charset="utf-8">
 <title>User | Dashboard</title>
-<link href="user_dash.css" rel="stylesheet" type="text/css">
+<link href="user_dash.css?v={random number/string}" rel="stylesheet" type="text/css">
 </head>
 
 <body>

@@ -47,9 +47,9 @@
 <div>
 	<h3 class="h3">Reservation Status</h3>
 </div>
-	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
+	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
-	
+	<div class="box">
 	<?php
 	//$identifier =  '';
 	if(isset($_GET['form']))
@@ -89,7 +89,7 @@
 	echo "</div>";
 	//end table
 	echo "<div class=\"addform\">";
-	echo "<h3>Are you confirm?:</h3>";
+	echo "<h3>Are you confirm?</h3>";
 	echo "<form method=\"get\" action=\"status2.php\">";
 	echo    "Reservation ID: ";
 	echo    "<input type=\"text\" value=\"$identifier\" disabled><br><br>";
@@ -99,6 +99,7 @@
 	echo "</div>";
 }
 ?>
+	</div>
 </body>
 <?php 
  } 

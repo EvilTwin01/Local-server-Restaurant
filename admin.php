@@ -1,11 +1,13 @@
 <?php 
-	session_start();
-	if(session_id()=='' || isset($_SESSION['user'])){
-		$dbhost = "localhost";
-		$dbuser = "root";
-		$dbpass = "1234";
-	    $dbname = "coffeecorner";
-		$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+session_start();
+if(session_id()=='' || isset($_SESSION['user'])){
+	$dbhost = "localhost";
+	$dbuser = "root";
+	$dbpass = "1234";
+	$dbname = "coffeecorner";
+	$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+		
+	$user = $_SESSION['user'];
 ?>
 
 <!doctype html>
@@ -19,10 +21,10 @@
 <body style="background-color: #F9F9F9">
 
 <h2 class="h2">Coffee Corner</h2>
-<nav class="navbar">
+<nav>
   <ul class="ul">
 	  <li class="dashboard"><a href="admin.php">Dashboard</a></li>
-	  <div class="dropdown">
+<div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Notification</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="notification.php">Add Notification</a>
@@ -36,10 +38,10 @@
   </ul>
 </nav>
 <div>
-	<h3 class="h3">Welcome <?php $_SESSION['user']. "."; ?></h3>
+	<h3 class="h3">Welcome <?php echo $user . "!"; ?></h3>
 </div>
-	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
-	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
+	<p class="cre">Logged in as : <?php echo $_SESSION['user']; ?></p>
+	<a class="logout" href="admin_logout.php" name="logout">Log out</a>
 	
 <script>
 /* When the user clicks on the button, 

@@ -10,10 +10,11 @@
   {
 	  $username = mysqli_real_escape_string($connection, $_POST['username']);
 	  $password = mysqli_real_escape_string($connection, $_POST['password']);
+	  //$user = $_SESSION['user'];
 	  
 	  $sql = "SELECT * FROM admin WHERE user='$username' AND pass='$password'";
 	  $result = mysqli_query($connection, $sql);
-	  
+
 	  if(!$result)
 			{
 				die("database query fail!" . mysqli_error($connection));
@@ -21,6 +22,7 @@
 
 	  if(mysqli_num_rows($result) == 1)
 	  {
+		  echo "<script type='text/javascript'>alert('You are now logged in!')</script>";
 		  header("location: admin.php");
 	  }
   }

@@ -7,7 +7,7 @@
 	    $dbname = "coffeecorner";
 		$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-	    $user = $_SESSION['username'];	
+	    $user = $_SESSION['user'];	
 
 		$sql  = "SELECT * FROM add_reservation";
 		$result = mysqli_query($connection, $sql);
@@ -42,7 +42,7 @@
 <div>
 	<h3 class="h3">Reservation Status</h3>
 </div>
-	<p class="credential">Logged in as : <?php echo $_SESSION['username']; ?></p>
+	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="logout.php" name="logout">Log out</a>
 	<!--drop down -->
 	<div class="listdrop">

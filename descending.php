@@ -1,37 +1,45 @@
 <?php 
 session_start();
 if(session_id()=='' || isset($_SESSION['user'])){
-	$dbhost = "localhost";
-	$dbuser = "root";
-	$dbpass = "1234";
-    $dbname = "coffeecorner";
-	$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "1234";
+$dbname = "coffeecorner";
+$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 		
-    $user = $_SESSION['user'];	
-	
-  $sql  = "SELECT * FROM add_reservation";
+  $sql  = "SELECT * FROM add_reservation ORDER BY date DESC";
   $result = mysqli_query($connection, $sql);
-	
+
   if(!$result)
   {
 	 die("database query fail!" . mysqli_error($connection) . mysqli_errno($connection));
   }
-	if(isset($_POST['delete']))
+	
+	if(isset($_POST['submit']))
 	{
-		header("location: user_view.php");
+		$selected_val = $_POST['sort'];  // Storing Selected Value In Variable
+		echo "You have selected :" .$selected_val;
+		
+		if($selected_val=="ASC")
+		{
+			header("location: ascending.php");
+		}
+		else if($selected_val=="DESC")
+		{
+			header("location: descending.php");
+		}
 	}
 ?>
 
 <!doctype html>
 <html>
 <head>
-<link href="admin_delete.css?v={random number/string}" rel="stylesheet" type="text/css">
+<link href="descending.css?v={random number/string}" rel="stylesheet" type="text/css">
 <meta charset="utf-8">
-<title>Admin | Delete Reservation</title>
+<title>Admin | View Reservation</title>
 </head>
 
 <body class="ggwp">
-
 <h2 class="h2">Coffee Corner</h2>
 <nav class="navbar">
   <ul class="ul">
@@ -45,73 +53,63 @@ if(session_id()=='' || isset($_SESSION['user'])){
 </div>
 	  <li class="view"><a href="admin_view.php">View Reservation</a></li>
 	  <li class="update"><a href="reservation_status.php">Reservation Status</a></li>
-	  <li class="delete"><a class="a_delete" href="admin_delete.php">Delete Reservation</a></li>
+	  <li class="delete"><a href="admin_delete.php">Delete Reservation</a></li>
 	  <li class="border-bottom"><a></a></li>
   </ul>
 </nav>
 	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
 	
-	<div class="delete1">
-   	<h3>Delete Reservation</h3>
-    <?php	
+	<div class=details_box>
+	<h2>Customer Reservation</h2>
+	<section class="gg">
+<form action="" method="post">
+  <select name="sort">
+    <option value="ASC">Ascending</option>
+    <option value="DESC">Descending</option>
+  </select>
+  <input type="submit" name="submit" value="SORT BY DATE">
+</form>
+</section>
+  <?php	
 	// table reservation details
 	echo "<table width=\"1200\" border=\"1\" cellspacing=\"0px\" cellpadding=\"50px\">";
     echo     "<tr>";
-	echo     "<th>Customer</th>";
+    echo     "<th>Username</th>";
 	echo     "<th>Reservation ID</th>";
     echo     "<th>Total Person</th>";
     echo     "<th>Date</th>";
 	echo     "<th>Time</th>";
-	echo     "<th>Status</th>"; 
+	echo     "<th>Status</th>";
     echo "</tr>";
     echo "<tr>";
     if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
-    ?>
+        ?>
         <tr>
-            <td><?php echo $row['username']; ?></td> 
+            <td><?php echo $row['username']; ?></td>
             <td><?php echo $row['reserve_id']; ?></td>  
-            <td><?php echo $row['no_of_people']; ?></td> 
+            <td contenteditable="false"><?php echo $row['no_of_people']; ?></td> 
             <td><?php echo date('d/m/Y', strtotime($row['date'])); ?></td> 
             <td><?php echo date('h:i a', strtotime($row['time'])); ?></td>
             <td><?php echo $row['status']; ?></td>
         </tr>
         <?php
     }
-}
+}else{
+		echo "<script type='text/javascript'>alert('No reservation to be displayed. No customer yet!'); window.location.href = \"admin.php\";</script>"; 
+	}
      echo         "</tr>";
      echo  "</table>";
 	// end table reservation details
   ?>
 	</div>
-<div class="select">
-	<?php
-		$sql  = "SELECT * FROM add_reservation";
-		$result = mysqli_query($connection, $sql);
-	?>
-		<h3>Select Reservation ID to delete:</h3>
-		<form id="form" action="admin_deletedetail.php" method="get">
-		<?php
-		echo "<select name=\"Reservation_ID\" form=\"form\">";
-		while ($row = mysqli_fetch_array($result)) 
-  		{
-			$gg = $row['reserve_id'];
-   			echo "<option value='" . $gg . "' name=\"reserve_id\">" . $gg . "</option>";
-		}
-		echo "</select>";
-		?>
-		<input type="submit" name="form" value="Submit">
-		</form>
-</div>
-
 <script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
@@ -126,16 +124,6 @@ window.onclick = function(event) {
     }
   }
 }
-</script>
-
-<script language="JavaScript" type="text/javascript">
-	function login(showhide){
-		if(showhide == "show"){
-    		document.getElementById('popupbox').style.visibility="visible";
-		}else if(showhide == "hide"){
-    		document.getElementById('popupbox').style.visibility="hidden"; 
-		}
-	}
 </script>
 </body>
 
