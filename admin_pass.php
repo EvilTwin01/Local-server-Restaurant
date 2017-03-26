@@ -8,14 +8,33 @@ if(session_id()=='' || isset($_SESSION['user'])){
 	$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 		
 	$user = $_SESSION['user'];
-	$sql = "SELECT * FROM admin";
-	$result = mysqli_query($connection, $sql);
+	
+	if(isset($_POST['submit'])){
+		
+		$old = $_POST['old'];
+		$new = $_POST['new'];
+		$username = $_SESSION['user'];
+		
+		$sql = "SELECT * FROM admin WHERE user='$username' AND pass='$old'";
+		$result = mysqli_query($connection, $sql);
+		
+	 if(mysqli_num_rows($result) == 1)
+	  {
+		  $sql1 = "UPDATE admin FROM SET pass='$new' WHERE user='$username'";
+		  $result1 = mysqli_query($connection, $sql1);
+		  
+	  }else{
+		  echo "<script type='text/javascript'>alert('You are now logged in!')</script>";
+		  //header("location: admin.php");
+	  }
+	}
+	//header("location: admin.php");
 ?>
 
 <!doctype html>
 <html>
 <head>
-<link href="admin.css?v=random number/string" rel="stylesheet" type="text/css">
+<link href="admin_pass.css?v=random number/string" rel="stylesheet" type="text/css">
 <meta charset="utf-8">
 <title>Admin | Dashboard</title>
 </head>
@@ -45,15 +64,13 @@ if(session_id()=='' || isset($_SESSION['user'])){
 	<p class="credential">Logged in as : <?php echo $_SESSION['user']; ?></p>
 	<a class="button_logout" href="admin_logout.php" name="logout">Log out</a>
 	<div class="admin_detail">
-	<?php
-	while ($row = mysqli_fetch_array($result)){
-	?>
-		<?php echo "<h4>Your Details:</h4>"; ?>
-		<?php echo "Username: " . $row['user']; ?> <br><br>
-	<?php
-	}
-	?>
-		<!--<a href="admin_pass.php">Change Password</a>-->
+	<form method="post" action="admin_pass.php">
+	Old Password:
+	<input type=text name="old">
+	New Password:
+	<input type=text name="new">
+	<input type="button" name="submit" value="submit">
+	</form>
 	</div>
 <script>
 /* When the user clicks on the button, 

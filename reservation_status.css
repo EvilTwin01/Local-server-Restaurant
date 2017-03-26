@@ -44,6 +44,7 @@
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-bottom-width: 0px;
+	background-color: #DDDDDD;
 }
 .delete {
 	padding-top: 13px;
@@ -177,4 +178,7 @@ th {
 .update2{
 	text-decoration: none;
 	color: #000000;
+}
+.update:active{
+	background-color: #DDDDDD;
 }

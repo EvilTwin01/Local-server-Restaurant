@@ -36,7 +36,7 @@
 <head>
 <meta charset="utf-8">
 <title>login</title>
-<link href="login.css" rel="stylesheet" type="text/css">
+<link href="login.css?v=random number/string" rel="stylesheet" type="text/css">
 </head>
 
 <body class="background">
@@ -71,6 +71,7 @@
 		<input type="password" class="password" placeholder="Password" name="password" required>
 		<input type="submit" class="login_button" value="Log in" name="login">
 		<p>New customer? <a href="signup.php" class="signup">Sign up now !</a></p>
+		<a href="index.html" class="redirect">Back to Home >>></a>
 	 </form>
  </div>	
 </body>

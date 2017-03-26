@@ -27,6 +27,7 @@
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-bottom-width: 0px;
+	background-color: #DDDDDD;
 }
 .view {
 	padding-top: 13px;
@@ -95,7 +96,7 @@
 
 .add2 {
 	text-decoration: none;
-	color: #FFFFFF;
+	color: black;
 }
 .dashtext {
 	text-decoration: none;
@@ -114,23 +115,23 @@
 	color: #FFFFFF;
 }
 .space {
-	margin-left: 235px;
-	background-color: #D46768;
+	margin-left: 252px;
+	background-color: #BF8C53;
 	position: absolute;
 	padding-right: 178px;
 	padding-left: 214px;
 	padding-bottom: 60px;
 	padding-top: 39px;
-	margin-top: -42px;
+	margin-top: -27px;
 }
 .current {
-	background-color: #87B48D;
+	background-color: #BF8C53;
 	position: absolute;
-	margin-top: -42px;
+	margin-top: -27px;
 	margin-left: 964px;
 	padding-top: 113px;
 	padding-right: 229px;
-	padding-bottom: 118px;
+	padding-bottom: 100px;
 	padding-left: 190px;
 }
 .ggwp {

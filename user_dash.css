@@ -19,6 +19,7 @@
 	border-bottom-style: solid;
 	border-bottom-width: 0px;
 	margin-top: -20px;
+	background-color: #DDDDDD;
 }
 .add {
 	padding-top: 13px;
@@ -112,7 +113,7 @@
 }
 .dashtext {
 	text-decoration: none;
-	color: #FFFFFF;
+	color: black;
 }
 .view2{
 	text-decoration: none;
@@ -153,4 +154,8 @@ th {
 	padding-left: 18px;
 	margin-left: 8px;
 	color: #FFFFFF;
+}
+.admin_detail {
+	margin-left: 70px;
+	background-color: #D50003;
 }

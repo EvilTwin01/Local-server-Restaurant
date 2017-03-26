@@ -7,6 +7,10 @@
   		$dbpass = "1234";
   		$dbname = "coffeecorner";
   		$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+		
+		$user = $_SESSION['username'];
+		$sql = "SELECT * FROM user";
+	$result = mysqli_query($connection, $sql);
 ?>
 
 <!doctype html>
@@ -46,6 +50,20 @@
 	<marquee class="marque" bgcolor="##FFFFFF"><?php echo $row['noti_text']; ?></marquee>
 	<?php } ?>
 </div>
+<div class="admin_detail">
+	<?php
+	while ($row = mysqli_fetch_array($result)){
+	?>
+		<?php echo "<h4>Your Details:</h4>"; ?>
+		<?php echo "Username: " . $row['username']; ?> <br><br>
+		<?php echo "User ID: " . $row['user_id']; ?> <br><br>
+		<?php echo "Email: " . $row['email']; ?> <br><br>
+		<?php echo "Phone: " . $row['phone']; ?> <br><br>
+	<?php
+	}
+	?>
+		<!--<a href="admin_pass.php">Change Password</a>-->
+	</div>
 </body>
 
 <?php 

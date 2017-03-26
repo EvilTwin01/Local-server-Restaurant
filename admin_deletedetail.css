@@ -154,12 +154,12 @@
 	margin-left: 322px;
 	margin-top: 50px;
 }
-.deleteButton {
+.deleteButton1 {
 	padding-top: 14px;
 	padding-right: 90px;
 	padding-bottom: 14px;
 	padding-left: 90px;
-	margin-left: 618px;
+	margin-left: 68px;
 	background-color: #F00004;
 	color: #FFFFFF;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -200,4 +200,14 @@ th {
 .update2{
 	text-decoration: none;
 	color: #000000;
+}.deleteButton {
+	padding-top: 14px;
+	padding-right: 90px;
+	padding-bottom: 14px;
+	padding-left: 90px;
+	margin-left: 297px;
+	background-color: #F00004;
+	color: #FFFFFF;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: bolder;
 }

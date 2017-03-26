@@ -97,13 +97,13 @@ nav  {
 	font-style: normal;
 }
 .bottom2 {
-	margin-top: -158px;
+	margin-top: -138px;
 	text-align: center;
 	font-size: smaller;
 	margin-left: 459px;
 	margin-right: 847px;
 	padding-top: 10px;
-	padding-bottom: 41px;
+	padding-bottom: 20px;
 	padding-right: 7px;
 	padding-left: 5px;
 	margin-bottom: -10px;
@@ -141,7 +141,7 @@ nav  {
 	background-color: #FFFBFB;
 	color: #6F2D00;
 	padding-left: 5px;
-	margin-left: 342px;
+	margin-left: 45px;
 	padding-bottom: inherit;
 	padding-top: inherit;
 	padding-right: 5px;
@@ -168,7 +168,7 @@ nav  {
 	-webkit-transition: all;
 	-o-transition: all;
 	transition: all;
-	margin-left: 361px;
+	margin-left: 54px;
 }
 .navTest:hover {
 	color: #FF7E00;
@@ -184,4 +184,7 @@ nav  {
 }
 .navHome:active {
 	background-color: #FFFFFF;
+}
+.pp {
+	margin-left: 50px;
 }

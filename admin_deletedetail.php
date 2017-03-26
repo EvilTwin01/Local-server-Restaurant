@@ -21,6 +21,9 @@
 		}
 	
 		header("location: admin_view.php");
+	}else if(isset($_GET['save1']))
+	{
+		header("location: admin_view.php");
 	}
 ?>
 
@@ -84,7 +87,8 @@
 	echo "<div class=\"addform\">";
 	echo "<form method=\"get\" action=\"admin_deletedetail.php\">";
 	echo    "<input type=\"hidden\" name=\"aa\" value=\"$identifier\">";
-	echo	"<input class=\"deleteButton\" type=\"submit\" name=\"save\" value=\"Delete\"><br><br>";
+	echo	"<input class=\"deleteButton\" type=\"submit\" name=\"save\" value=\"YES\">";
+	echo	"<input class=\"deleteButton1\" type=\"submit\" name=\"save1\" value=\"NO\"><br><br>";
 	echo	"</form>";	
 	echo "</div>";
 }

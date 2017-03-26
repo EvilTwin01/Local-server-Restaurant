@@ -51,6 +51,7 @@
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-right-style: none;
+	background-color: #DDDDDD;
 }
 .border-bottom {
 	padding-bottom: 523px;
@@ -115,7 +116,7 @@
 }
 .delete2{
 	text-decoration: none;
-	color: #FFFFFF;
+	color: black;
 }
 tr{
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;

@@ -36,6 +36,7 @@
 	border-top-style: solid;
 	border-bottom-style: solid;
 	border-bottom-width: 0px;
+	background-color: #DDDDDD;
 }
 .update {
 	padding-top: 13px;
@@ -108,7 +109,7 @@
 }
 .view2{
 	text-decoration: none;
-	color: #FFFFFF;
+	color: black;
 }
 .update2{
 	text-decoration: none;
